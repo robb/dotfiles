@@ -1,0 +1,10 @@
+.DS_Store
+
+*.mode1v3
+*.pbxuser
+
+*.xcworkspace/xcuserdata/
+project.xcworkspace/
+
+*~
+*.swp
