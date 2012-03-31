@@ -36,7 +36,7 @@ for file in $symlinks; do
             rm $target
         fi
 
-        if [ $backup  || $backup_all; then
+        if $backup  || $backup_all; then
             mv $target "$HOME/$basename.backup"
         fi
     fi
