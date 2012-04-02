@@ -3,8 +3,8 @@
 *.mode1v3
 *.pbxuser
 
-*.xcworkspace/xcuserdata/
-project.xcworkspace/
+xcuserdata
+*.xcodeproj/project.xcworkspace*
 
 *~
 *.swp
