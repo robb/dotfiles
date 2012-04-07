@@ -16,7 +16,7 @@ endif
 "
 " For utf-8 use the following characters
 "
-"   ▶ for tabs
+"   ▸ for tabs
 "   . for trailing spaces
 "   ¬ for line breaks
 "
@@ -28,7 +28,7 @@ endif
 "
 if &encoding == "utf-8"
   set list
-  set listchars=tab:▶\ ,trail:.,eol:¬
+  set listchars=tab:▸\ ,trail:.,eol:¬
 else
   set list
   set listchars=tab:>\ ,trail:.,eol:-
