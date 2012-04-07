@@ -39,5 +39,5 @@ endif
 " NonText    affects eol, extends and precedes
 " SpecialKey affects nbsp, tab and trail
 highlight NonText ctermfg=DarkGrey
-highlight SpecialKey ctermfg=DarkRed
+highlight SpecialKey ctermfg=DarkGrey
 
