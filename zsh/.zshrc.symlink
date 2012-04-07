@@ -8,7 +8,7 @@ plugins=(git git-flow osx brew textmate iterm node cake extract)
 source $ZSH/oh-my-zsh.sh
 
 export ANDROID_HOME=`brew --prefix android`
-export PATH=/Users/robb/.gem/ruby/1.8/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/Cellar/android-sdk/r11/bin
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/robb/.gem/ruby/1.8/bin:/usr/X11/bin:/usr/local/Cellar/android-sdk/r11/bin
 
 # Source all zsh config files files
 for config_file ($HOME/.dotfiles/**/*.zsh) source $config_file
