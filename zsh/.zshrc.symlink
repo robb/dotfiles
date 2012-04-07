@@ -1,6 +1,8 @@
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="robbyrussell"
 
+LANG=en_US.UTF-8
+
 plugins=(git git-flow osx brew textmate iterm node cake extract)
 
 source $ZSH/oh-my-zsh.sh
