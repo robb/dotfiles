@@ -1,9 +1,29 @@
+# We're going to need UTF-8, badly
 LANG=en_US.UTF-8
+
+# Load and run compinit
+autoload -U compinit
+compinit -i
+
+# Enable piping to multiple outputs
+setopt multios
+
+# Automaticall cd into directories when typing their name
+setopt auto_cd
+setopt cdable_vars
+
+setopt auto_pushd
+
+setopt auto_menu
+
+# Enable spelling correction
+setopt correct
+
+# Enable globbing for hidden files
+setopt globdots
 
 export ANDROID_HOME=`brew --prefix android`
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/robb/.gem/ruby/1.8/bin:/usr/X11/bin:/usr/local/Cellar/android-sdk/r11/bin
 
 # Source all zsh config files files
 for config_file ($HOME/.dotfiles/**/*.zsh) source $config_file
-
-[[ -s "/Users/robb/.rvm/scripts/rvm" ]] && source "/Users/robb/.rvm/scripts/rvm"
