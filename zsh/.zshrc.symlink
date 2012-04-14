@@ -5,6 +5,9 @@ LANG=en_US.UTF-8
 autoload -U compinit
 compinit -i
 
+# Source all zsh config files files
+for config_file ($HOME/.dotfiles/**/*.zsh) source $config_file
+
 # Enable piping to multiple outputs
 setopt multios
 
@@ -13,7 +16,6 @@ setopt auto_cd
 setopt cdable_vars
 
 setopt auto_pushd
-
 setopt auto_menu
 
 # Enable spelling correction
@@ -24,6 +26,3 @@ setopt globdots
 
 export ANDROID_HOME=`brew --prefix android`
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/robb/.gem/ruby/1.8/bin:/usr/X11/bin:/usr/local/Cellar/android-sdk/r11/bin
-
-# Source all zsh config files files
-for config_file ($HOME/.dotfiles/**/*.zsh) source $config_file
