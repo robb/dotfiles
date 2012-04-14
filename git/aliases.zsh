@@ -1,6 +1,3 @@
-alias gl='git log --pretty=oneline --decorate'
-alias gs='git status'
-
 g () {
   if [ $# -eq 0 ]
   then
@@ -10,3 +7,9 @@ g () {
   fi
 }
 compdef g=git
+
+alias gl='git log --pretty=oneline --decorate'
+compdef _git gl=git-lig
+
+alias gs='git status'
+compdef _git gs=git-status
