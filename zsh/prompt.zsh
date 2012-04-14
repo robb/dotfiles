@@ -5,7 +5,7 @@ autoload colors && colors
 # Enable substitutions
 setopt prompt_subst
 
-PROMPT='%{$FG[214]%} ${PWD/#$HOME/~} %{$reset_color%}'
+PROMPT='%{$FG[214]%}%2c %{$reset_color%}'
 RPROMPT='$(git_prompt)'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$FG[045]%}git:("
