@@ -5,8 +5,24 @@ autoload colors && colors
 # Enable substitutions
 setopt prompt_subst
 
-PROMPT='%{$FG[214]%}%2c %{$reset_color%}'
-RPROMPT='$(git_prompt)'
+PROMPT='$(left_prompt)'
+RPROMPT='$(right_prompt)'
+
+function left_prompt() {
+  cols="$(tput cols)"
+  if [ "$cols" -gt 88 ]; then
+    echo "%{$FG[214]%}%2c $(git_prompt) $(git_dirty_state) %{$reset_color%}"
+  else
+    echo "%{$FG[214]%}%2c %{$reset_color%}"
+  fi
+}
+
+function right_prompt() {
+  cols="$(tput cols)"
+  if [ "$cols" -le 88 ]; then
+    echo " $(git_dirty_state) $(git_prompt)"
+  fi
+}
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$FG[045]%}git:("
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$FG[045]%})%{$reset_color%}"
@@ -96,6 +112,6 @@ function git_dirty_state() {
 function git_prompt() {
   sha="$(git_short_sha)"
   if [ -n "$sha" ]; then
-    echo "$(git_dirty_state) $ZSH_THEME_GIT_PROMPT_PREFIX$(git_branch_state)$ZSH_THEME_GIT_PROMPT_SUFFIX"
+    echo "$ZSH_THEME_GIT_PROMPT_PREFIX$(git_branch_state)$ZSH_THEME_GIT_PROMPT_SUFFIX"
   fi
 }
