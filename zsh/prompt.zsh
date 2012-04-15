@@ -11,7 +11,7 @@ RPROMPT='$(right_prompt)'
 function left_prompt() {
   cols="$(tput cols)"
   if [ "$cols" -gt 88 ]; then
-    echo "%{$FG[214]%}%2c $(git_prompt) $(git_dirty_state) %{$reset_color%}"
+    echo "%{$FG[214]%}%2c $(git_prompt)$(git_dirty_state)%{$reset_color%}"
   else
     echo "%{$FG[214]%}%2c %{$reset_color%}"
   fi
@@ -20,7 +20,7 @@ function left_prompt() {
 function right_prompt() {
   cols="$(tput cols)"
   if [ "$cols" -le 88 ]; then
-    echo " $(git_dirty_state) $(git_prompt)"
+    echo "$(git_dirty_state)$(git_prompt)"
   fi
 }
 
@@ -33,9 +33,9 @@ ZSH_THEME_GIT_PROMPT_BRANCH_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DETACHED_PREFIX="%{$FG[009]%}"
 ZSH_THEME_GIT_PROMPT_DETACHED_SUFFIX="%{$reset_color%}"
 
-ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$FG[142]%}○"
-ZSH_THEME_GIT_PROMPT_STAGED="%{$FG[142]%}●"
-ZSH_THEME_GIT_PROMPT_CLEAN=""
+ZSH_THEME_GIT_PROMPT_UNSTAGED=" %{$FG[142]%}○ "
+ZSH_THEME_GIT_PROMPT_STAGED=" %{$FG[142]%}● "
+ZSH_THEME_GIT_PROMPT_CLEAN=" "
 
 # Name of the current branch
 function git_current_branch() {
