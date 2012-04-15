@@ -96,6 +96,11 @@ function git_branch_state() {
 }
 
 function git_dirty_state() {
+  sha="$(git_short_sha)"
+  if [ -z "$sha" ]; then
+    return
+  fi
+
   untracked="$(git ls-files --other --exclude-standard | wc -l | tr -d ' ')"
   changed="$(git diff --name-status | wc -l | tr -d ' ')"
   staged="$(git diff --staged --name-status | wc -l | tr -d ' ')"
