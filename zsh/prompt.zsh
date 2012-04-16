@@ -5,9 +5,6 @@ autoload colors && colors
 # Enable substitutions
 setopt prompt_subst
 
-PROMPT='$(left_prompt)'
-RPROMPT='$(right_prompt)'
-
 function left_prompt() {
   cols="$(tput cols)"
   if [ "$cols" -gt 88 ]; then
@@ -23,19 +20,6 @@ function right_prompt() {
     echo "$(git_dirty_state)$(git_prompt)"
   fi
 }
-
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$FG[045]%}git:("
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$FG[045]%})%{$reset_color%}"
-
-ZSH_THEME_GIT_PROMPT_BRANCH_PREFIX="%{$FG[063]%}"
-ZSH_THEME_GIT_PROMPT_BRANCH_SUFFIX="%{$reset_color%}"
-
-ZSH_THEME_GIT_PROMPT_DETACHED_PREFIX="%{$FG[009]%}"
-ZSH_THEME_GIT_PROMPT_DETACHED_SUFFIX="%{$reset_color%}"
-
-ZSH_THEME_GIT_PROMPT_UNSTAGED=" %{$FG[142]%}○ "
-ZSH_THEME_GIT_PROMPT_STAGED=" %{$FG[142]%}● "
-ZSH_THEME_GIT_PROMPT_CLEAN=" "
 
 # Name of the current branch
 function git_current_branch() {
@@ -71,6 +55,9 @@ function git_remote_ref() {
   fi
 }
 
+# Prints the number of commits your are ahead or behind of the upstream repo,
+# e.g. '2,3' means 2 ahead, 3 behind
+# TODO: Make the colors customizable
 function git_ahead_behind_state() {
   list="$(git rev-list --left-right $(git_remote_ref)...HEAD 2> /dev/null)"
   ahead=$(echo $list | grep '>' | wc -l | tr -d ' ')
@@ -82,6 +69,30 @@ function git_ahead_behind_state() {
     echo "%{$FG[045]%}:%{$FG[118]%}$ahead"
   elif [ "$behind" -gt 0 ]; then
     echo "%{$FG[045]%}:%{$FG[009]%}$behind"
+  fi
+}
+
+# Time since last commit, in seconds
+# Inspired by @goldjunge
+# https://github.com/goldjunge/oh-my-zsh/commit/084c44a9cbb82fc6d78396d053539162331fa7c0
+function git_time_since_last_commit() {
+  sha="$(git_short_sha)"
+  if [ -n "$sha" ]; then
+    last="$(git log --pretty=format:'%at' -1 2> /dev/null)"
+    now="$(date +%s)"
+
+    echo "$((now - last))"
+  fi
+}
+
+function git_color_for_time_since_last_commit() {
+  seconds="$(git_time_since_last_commit)"
+  if [ "$seconds" -gt 1800 ]; then
+    echo "$ZSH_THEME_GIT_TIME_SINCE_LAST_COMMIT_LONG"
+  elif if [ "$seconds" -gt 900 ]; then
+    echo "$ZSH_THEME_GIT_TIME_SINCE_LAST_COMMIT_MEDIUM"
+  else
+    echo "$ZSH_THEME_GIT_TIME_SINCE_LAST_COMMIT_SHORT"
   fi
 }
 
@@ -120,3 +131,23 @@ function git_prompt() {
     echo "$ZSH_THEME_GIT_PROMPT_PREFIX$(git_branch_state)$ZSH_THEME_GIT_PROMPT_SUFFIX"
   fi
 }
+
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$FG[045]%}git:("
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$FG[045]%})%{$reset_color%}"
+
+ZSH_THEME_GIT_PROMPT_BRANCH_PREFIX="%{$FG[063]%}"
+ZSH_THEME_GIT_PROMPT_BRANCH_SUFFIX="%{$reset_color%}"
+
+ZSH_THEME_GIT_PROMPT_DETACHED_PREFIX="%{$FG[009]%}"
+ZSH_THEME_GIT_PROMPT_DETACHED_SUFFIX="%{$reset_color%}"
+
+ZSH_THEME_GIT_TIME_SINCE_LAST_COMMIT_LONG="%{$FG[009]%}"
+ZSH_THEME_GIT_TIME_SINCE_LAST_COMMIT_MEDIUM="%{$FG[142]%}"
+ZSH_THEME_GIT_TIME_SINCE_LAST_COMMIT_SHORT="%{$FG[118]%}"
+
+ZSH_THEME_GIT_PROMPT_UNSTAGED=" $(git_color_for_time_since_last_commit)○ "
+ZSH_THEME_GIT_PROMPT_STAGED=" $(git_color_for_time_since_last_commit)● "
+ZSH_THEME_GIT_PROMPT_CLEAN=" "
+
+PROMPT='$(left_prompt)'
+RPROMPT='$(right_prompt)'
