@@ -24,5 +24,7 @@ setopt correct
 # Enable globbing for hidden files
 setopt globdots
 
-export ANDROID_HOME=`brew --prefix android`
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/robb/.gem/ruby/1.8/bin:/usr/X11/bin:/usr/local/Cellar/android-sdk/r11/bin
+# Homebrew
+if which brew > /dev/null; then
+  export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+fi
