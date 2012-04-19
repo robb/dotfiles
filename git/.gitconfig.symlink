@@ -1,0 +1,40 @@
+# [include] requires git 1.7.10 (but it's worth it!!)
+# Add your [user] and [github] to ~/..gitconfig_custom
+[include]
+  path = .gitconfig_custom
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+
+[core]
+  excludesfile = ~/.gitignore
+  editor = "subl -w"
+  whitespace = trailing-space,space-before-tab
+  quotepath = false
+
+[merge]
+  ff = false
+
+[alias]
+  pull = pull --ff-only
+
+  co = checkout
+  st = status
+  ci = commit
+  df = diff
+
+  who = shortlog -s --
+  last = log -1 HEAD
+  unstage = reset HEAD --
+  lg = "!f () { git log --graph --color=always --abbrev-commit --date=relative --pretty=format:'%x00%h%x00%s%x00%cd%x00%an%x00%d' $@ | gawk -F '\\0' '{ printf \"%s\\033[31m%s\\033[0m %-80s \\033[32m%14s\\033[0m \\033[30;1m%s\\033[0m\\033[33m%s\\n\", $1, $2, gensub(/(.{79}).{2,}/, \"\\\\1…\",\"g\",$3), $4, $5, $6 }' | less -R; }; f"
+  dashboard = "!f() { for branch in $(git branch -a | cut -c 3-); do if [ ! $branch = '->' ]; then branches=\"$branches$(git log --no-walk --pretty=format:\"%ct (%cr)\t%Cgreen$branch%Creset %Cblue%an%Creset\" $branch)\\n\"; fi; done; echo $branches | sort -rnk1 |  cut -c 12- | head -n40; }; f"
+
+  substatus = submodule foreach git status
+  subdiff = submodule foreach git --no-pager diff
+  subupdate = submodule update --init --recursive
+
+  x = !gitx
+  hub = !hub
