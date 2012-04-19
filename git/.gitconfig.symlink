@@ -1,0 +1,27 @@
+[user]
+  name  = Robert Böhnke
+  email = robb@soundcloud.com
+
+[include]
+  path = .dotfiles/secret/.gitconfig
+
+[core]
+  excludesfile = ~/.gitignore
+  editor       = /usr/bin/vim
+
+[alias]
+  co    = checkout
+  st    = status
+  subup = submodule update --recursive --init
+  pull  = pull --ff-only
+  hub   = !hub
+  flow  = !git-flow
+
+[color]
+  branch = auto
+  diff   = auto
+  status = auto
+  ui     = true
+
+[push]
+  default = current
