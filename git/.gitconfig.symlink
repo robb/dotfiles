@@ -1,6 +1,6 @@
 [user]
   name  = Robert Böhnke
-  email = robb@soundcloud.com
+  email = robb@robb.is
 
 [include]
   path = .dotfiles/secret/.gitconfig
