@@ -117,11 +117,11 @@ function git_dirty_state() {
   staged="$(git diff --staged --name-status | wc -l | tr -d ' ')"
 
   if  [ "$staged" -gt 0 ]; then
-    echo "$ZSH_THEME_GIT_PROMPT_STAGED"
+    echo "$(git_color_for_time_since_last_commit)$ZSH_THEME_GIT_PROMPT_STAGED"
   elif [ "$untracked" -gt 0 ] || [ "$changed" -gt 0 ]; then
-    echo "$ZSH_THEME_GIT_PROMPT_UNSTAGED"
+    echo "$(git_color_for_time_since_last_commit)$ZSH_THEME_GIT_PROMPT_UNSTAGED"
   else
-    echo "$ZSH_THEME_GIT_PROMPT_CLEAN"
+    echo "$(git_color_for_time_since_last_commit)$ZSH_THEME_GIT_PROMPT_CLEAN"
   fi
 }
 
@@ -145,8 +145,8 @@ ZSH_THEME_GIT_TIME_SINCE_LAST_COMMIT_LONG="%{$FG[009]%}"
 ZSH_THEME_GIT_TIME_SINCE_LAST_COMMIT_MEDIUM="%{$FG[142]%}"
 ZSH_THEME_GIT_TIME_SINCE_LAST_COMMIT_SHORT="%{$FG[118]%}"
 
-ZSH_THEME_GIT_PROMPT_UNSTAGED=" $(git_color_for_time_since_last_commit)○ "
-ZSH_THEME_GIT_PROMPT_STAGED=" $(git_color_for_time_since_last_commit)● "
+ZSH_THEME_GIT_PROMPT_UNSTAGED=" ○ "
+ZSH_THEME_GIT_PROMPT_STAGED=" ● "
 ZSH_THEME_GIT_PROMPT_CLEAN=" "
 
 PROMPT='$(left_prompt)'
