@@ -1,12 +1,26 @@
+# Mac OS X
 .DS_Store
 
-*.mode1v3
+# Xcode
+build/*
 *.pbxuser
-
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+*.xcworkspace
+!default.xcworkspace
 xcuserdata
-*.xcodeproj/project.xcworkspace*
+profile
+*.moved-aside
+DerivedData
 
+# vim
 *~
 *.swp
 
+# node
 node_modules/
