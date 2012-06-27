@@ -13,7 +13,7 @@
   co    = checkout
   st    = status
   subup = submodule update --recursive --init
-  pull  = pull --ff-only
+  puff  = pull --ff-only
   hub   = !hub
 
 [color]
