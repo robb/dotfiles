@@ -11,6 +11,7 @@
 
 [alias]
   co    = checkout
+  cl    = clone --recursive
   st    = status
   subup = submodule update --recursive --init
   puff  = pull --ff-only
