@@ -15,7 +15,6 @@
   subup = submodule update --recursive --init
   pull  = pull --ff-only
   hub   = !hub
-  flow  = !git-flow
 
 [color]
   branch = auto
