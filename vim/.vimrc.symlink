@@ -49,3 +49,5 @@ endif
 highlight NonText ctermfg=DarkGrey
 highlight SpecialKey ctermfg=DarkGrey
 
+" Color line numbers
+highlight LineNr ctermfg=DarkGrey
