@@ -12,6 +12,14 @@ if has("multi_byte")
   set fileencodings=ucs-bom,utf-8,latin1
 endif
 
+" Switch between relative and absolute line numbers
+" when entering or leaving insert mode
+set rnu
+au InsertEnter * :set nu
+au InsertLeave * :set rnu
+au FocusLost   * :set nu
+au FocusGained * :set rnu
+
 " Display invisible characters
 "
 " For utf-8 use the following characters
