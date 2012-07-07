@@ -28,3 +28,11 @@ setopt globdots
 if which brew > /dev/null; then
   export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 fi
+
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+
+# rbenv
+if which rbenv > /dev/null ; then
+  eval "$(rbenv init -)"
+fi
