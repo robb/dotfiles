@@ -5,12 +5,16 @@ autoload colors && colors
 # Enable substitutions
 setopt prompt_subst
 
+function ssh_prompt() {
+  if [ $SSH_CONNECTION ]; then echo "%{$fg_bold[white]%}%M "; fi
+}
+
 function left_prompt() {
   cols="$(tput cols)"
   if [ "$cols" -gt 88 ]; then
-    echo "%{$FG[214]%}%2c $(git_prompt)$(git_dirty_state)%{$reset_color%}"
+    echo "$(ssh_prompt)%{$FG[214]%}%2c $(git_prompt)$(git_dirty_state)%{$reset_color%}"
   else
-    echo "%{$FG[214]%}%2c %{$reset_color%}"
+    echo "$(ssh_prompt)%{$FG[214]%}%2c %{$reset_color%}"
   fi
 }
 
