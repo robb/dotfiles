@@ -14,7 +14,7 @@
   cl    = clone --recursive
   st    = status
   subup = submodule update --recursive --init
-  puff  = pull --ff-only
+  puff  = pull --ff --ff-only
   hub   = !hub
 
 [color]
