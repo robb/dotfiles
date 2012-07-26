@@ -29,6 +29,15 @@ if which brew > /dev/null; then
   export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 fi
 
+# Android
+if [ -d /usr/local/Cellar/android-sdk/r20 ]; then
+  export ANDROID_HOME=/usr/local/Cellar/android-sdk/r20
+fi
+
+if [ -d /usr/local/Cellar/android-ndk/r8/ ]; then
+  export ANDROID_NDK_HOME=/usr/local/Cellar/android-ndk/r8/
+fi
+
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
