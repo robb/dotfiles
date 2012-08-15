@@ -2,9 +2,10 @@
   path = .dotfiles/secret/.gitconfig
 
 [core]
-  excludesfile = ~/.gitignore
-  editor       = /usr/bin/vim
-  trustctime   = false
+  excludesfile   = ~/.gitignore
+  attributesfile = ~/.gitattributes
+  editor         = /usr/bin/vim
+  trustctime     = false
 
 [alias]
   co    = checkout
@@ -38,3 +39,6 @@
 
 [diff]
   algorithm = patience
+
+[diff "image"]
+  textconv = sh ~/.dotfiles/git/difftools/image.sh
