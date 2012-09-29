@@ -5,8 +5,15 @@ LANG=en_US.UTF-8
 autoload -U compinit
 compinit -i
 
-# Source all zsh config files files
-for config_file ($HOME/.dotfiles/**/*.zsh) source $config_file
+# Enable globbing for hidden files, advanced globbing
+setopt globdots
+setopt extendedglob
+
+# Source all zsh config files excluding the plugins directory
+DOTFILES_DIR=$HOME/.dotfiles
+
+for config_file ($DOTFILES_DIR/**/*.zsh~($DOTFILES_DIR/plugins/*.zsh)(.))
+  source $config_file
 
 # Enable piping to multiple outputs
 setopt multios
@@ -20,9 +27,6 @@ setopt auto_menu
 
 # Enable spelling correction
 setopt correct
-
-# Enable globbing for hidden files
-setopt globdots
 
 # Homebrew
 if which brew > /dev/null; then
