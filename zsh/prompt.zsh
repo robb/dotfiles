@@ -5,6 +5,49 @@ autoload colors && colors
 # Enable substitutions
 setopt prompt_subst
 
+# Load the zsh-syntax-highlighting plugin
+source $DOTFILES_DIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Enable highlighters
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
+
+# Override highlighter colors
+ZSH_HIGHLIGHT_STYLES[default]=none
+ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=009
+ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=009,standout
+ZSH_HIGHLIGHT_STYLES[alias]=fg=white,bold
+ZSH_HIGHLIGHT_STYLES[builtin]=fg=white,bold
+ZSH_HIGHLIGHT_STYLES[function]=fg=white,bold
+ZSH_HIGHLIGHT_STYLES[command]=fg=white,bold
+ZSH_HIGHLIGHT_STYLES[precommand]=fg=white,underline
+ZSH_HIGHLIGHT_STYLES[commandseparator]=none
+ZSH_HIGHLIGHT_STYLES[hashed-command]=fg=009
+ZSH_HIGHLIGHT_STYLES[path]=fg=214,underline
+ZSH_HIGHLIGHT_STYLES[globbing]=fg=063
+ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=white,underline
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=none
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=none
+ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=none
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=063
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=063
+ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=009
+ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=009
+ZSH_HIGHLIGHT_STYLES[assign]=none
+
+# Theme colors
+ZSH_THEME_PROMPT_PATH_COLOR=$FG[214]
+ZSH_THEME_GIT_PROMPT_COLOR=$FG[045]
+ZSH_THEME_GIT_PROMPT_BRANCH_COLOR=$FG[063]
+ZSH_THEME_GIT_PROMPT_DETACHED_COLOR=$FG[009]
+
+ZSH_THEME_GIT_TIME_SINCE_LAST_COMMIT_LONG_COLOR=$FG[009]
+ZSH_THEME_GIT_TIME_SINCE_LAST_COMMIT_MEDIUM_COLOR=$FG[142]
+ZSH_THEME_GIT_TIME_SINCE_LAST_COMMIT_SHORT_COLOR=$FG[118]
+
+ZSH_THEME_GIT_PROMPT_AHEAD_COLOR=$FG[118]
+ZSH_THEME_GIT_PROMPT_BEHIND_COLOR=$FG[009]
+
+
 function ssh_prompt() {
   if [ $SSH_CONNECTION ]; then echo "%{$fg_bold[white]%}%M "; fi
 }
@@ -12,9 +55,9 @@ function ssh_prompt() {
 function left_prompt() {
   cols="$(tput cols)"
   if [ "$cols" -gt 88 ]; then
-    echo "$(ssh_prompt)%{$FG[214]%}%2c $(git_prompt)$(git_dirty_state)%{$reset_color%}"
+    echo "$(ssh_prompt)%{$ZSH_THEME_PROMPT_PATH_COLOR%}%2c $(git_prompt)$(git_dirty_state)%{$reset_color%}"
   else
-    echo "$(ssh_prompt)%{$FG[214]%}%2c %{$reset_color%}"
+    echo "$(ssh_prompt)%{$ZSH_THEME_PROMPT_PATH_COLOR%}%2c %{$reset_color%}"
   fi
 }
 
@@ -68,11 +111,11 @@ function git_ahead_behind_state() {
   behind=$(echo $list | grep '<' | wc -l | tr -d ' ')
 
   if [ "$ahead" -gt 0 ] && [ "$behind" -gt 0 ]; then
-    echo "%{$FG[045]%}:%{$FG[118]%}$ahead%{$reset_color%},%{$FG[009]%}$behind"
+    echo "%{$ZSH_THEME_GIT_PROMPT_COLOR%}:%{$ZSH_THEME_GIT_PROMPT_AHEAD_COLOR%}$ahead%{$reset_color%},%{$ZSH_THEME_GIT_PROMPT_BEHIND_COLOR%}$behind"
   elif [ "$ahead" -gt 0 ]; then
-    echo "%{$FG[045]%}:%{$FG[118]%}$ahead"
+    echo "%{$ZSH_THEME_GIT_PROMPT_COLOR%}:%{$ZSH_THEME_GIT_PROMPT_AHEAD_COLOR%}$ahead"
   elif [ "$behind" -gt 0 ]; then
-    echo "%{$FG[045]%}:%{$FG[009]%}$behind"
+    echo "%{$ZSH_THEME_GIT_PROMPT_COLOR%}:%{$ZSH_THEME_GIT_PROMPT_BEHIND_COLOR%}$behind"
   fi
 }
 
@@ -92,11 +135,11 @@ function git_time_since_last_commit() {
 function git_color_for_time_since_last_commit() {
   seconds="$(git_time_since_last_commit)"
   if [ "$seconds" -gt 1800 ]; then
-    echo "$ZSH_THEME_GIT_TIME_SINCE_LAST_COMMIT_LONG"
+    echo "%{$ZSH_THEME_GIT_TIME_SINCE_LAST_COMMIT_LONG_COLOR%}"
   elif if [ "$seconds" -gt 900 ]; then
-    echo "$ZSH_THEME_GIT_TIME_SINCE_LAST_COMMIT_MEDIUM"
+    echo "%{$ZSH_THEME_GIT_TIME_SINCE_LAST_COMMIT_MEDIUM_COLOR%}"
   else
-    echo "$ZSH_THEME_GIT_TIME_SINCE_LAST_COMMIT_SHORT"
+    echo "%{$ZSH_THEME_GIT_TIME_SINCE_LAST_COMMIT_SHORT_COLOR%}"
   fi
 }
 
@@ -136,22 +179,18 @@ function git_prompt() {
   fi
 }
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$FG[045]%}git:("
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$FG[045]%})%{$reset_color%}"
-
-ZSH_THEME_GIT_PROMPT_BRANCH_PREFIX="%{$FG[063]%}"
+ZSH_THEME_GIT_PROMPT_BRANCH_PREFIX="%{$ZSH_THEME_GIT_PROMPT_BRANCH_COLOR%}"
 ZSH_THEME_GIT_PROMPT_BRANCH_SUFFIX="%{$reset_color%}"
 
-ZSH_THEME_GIT_PROMPT_DETACHED_PREFIX="%{$FG[009]%}"
+ZSH_THEME_GIT_PROMPT_DETACHED_PREFIX="%{$ZSH_THEME_GIT_PROMPT_DETACHED_COLOR%}"
 ZSH_THEME_GIT_PROMPT_DETACHED_SUFFIX="%{$reset_color%}"
-
-ZSH_THEME_GIT_TIME_SINCE_LAST_COMMIT_LONG="%{$FG[009]%}"
-ZSH_THEME_GIT_TIME_SINCE_LAST_COMMIT_MEDIUM="%{$FG[142]%}"
-ZSH_THEME_GIT_TIME_SINCE_LAST_COMMIT_SHORT="%{$FG[118]%}"
 
 ZSH_THEME_GIT_PROMPT_UNSTAGED=" ○ "
 ZSH_THEME_GIT_PROMPT_STAGED=" ● "
 ZSH_THEME_GIT_PROMPT_CLEAN=" "
+
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$ZSH_THEME_GIT_PROMPT_COLOR%}git:("
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$ZSH_THEME_GIT_PROMPT_COLOR%})%{$reset_color%}"
 
 PROMPT='$(left_prompt)'
 RPROMPT='$(right_prompt)'
