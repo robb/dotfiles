@@ -2,3 +2,20 @@
 
 These are my .dotfiles.
 There are many like them, but these ones are mine.
+
+## Install guide
+
+1. Clone it into `~`
+2. Make sure you have the submodules by running `submodule update --recursive --init`
+3. Run `install.sh`
+
+If you're not me, you may want to configure `~/.dotfiles/secret/.gitconfig` to
+look a little something like this:
+
+```
+[user]
+  name  = Marty McFly
+  email = mmcfly@hillvalley.edu
+```
+
+If you're me, you know that already.
