@@ -1,7 +1,3 @@
-[user]
-  name  = Robert Böhnke
-  email = robb@robb.is
-
 [include]
   path = .dotfiles/secret/.gitconfig
 
