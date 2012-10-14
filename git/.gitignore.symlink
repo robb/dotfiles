@@ -24,3 +24,6 @@ DerivedData
 
 # node
 node_modules/
+
+# Rake autocomplete
+.rake_tasks
