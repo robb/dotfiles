@@ -3,6 +3,8 @@
 These are my .dotfiles.
 There are many like them, but these ones are mine.
 
+![](http://robb.is/img/prompt.png)
+
 ## Install guide
 
 1. Clone it into `~`
