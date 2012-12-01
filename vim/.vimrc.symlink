@@ -51,3 +51,6 @@ highlight SpecialKey ctermfg=DarkGrey
 
 " Color line numbers
 highlight LineNr ctermfg=DarkGrey
+
+" Quickly pressing j twice exits insert mode
+:imap jj <Esc>
