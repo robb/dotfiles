@@ -10,10 +10,12 @@ for file in $symlinks; do
     backup="$HOME/$basename.backup"
 
     if [ -h "$target" ]; then
+        echo "removed $target"
         rm $target
     fi
 
     if [ -e "$backup" ] || [ -h "$backup" ]; then
+        echo "restored $target"
         mv $backup $target
     fi
 done
