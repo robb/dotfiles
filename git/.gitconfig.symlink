@@ -21,3 +21,11 @@
 
 [push]
   default = current
+
+[branch "master"]
+  remote = origin
+  merge  = refs/heads/master
+
+[branch "development"]
+  remote = origin
+  merge  = refs/heads/development
