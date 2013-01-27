@@ -14,11 +14,13 @@ endif
 
 " Switch between relative and absolute line numbers
 " when entering or leaving insert mode
-set rnu
-au InsertEnter * :set nu
-au InsertLeave * :set rnu
-au FocusLost   * :set nu
-au FocusGained * :set rnu
+if version >= 703
+  set rnu
+  au InsertEnter * :set nu
+  au InsertLeave * :set rnu
+  au FocusLost   * :set nu
+  au FocusGained * :set rnu
+endif
 
 " Display invisible characters
 "
