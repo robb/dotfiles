@@ -1,5 +1,5 @@
 # We're going to need UTF-8, badly
-LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Load and run compinit
 autoload -U compinit
