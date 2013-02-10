@@ -28,6 +28,10 @@ setopt auto_menu
 # Enable spelling correction
 setopt correct
 
+if which npm > /dev/null; then
+  export PATH=/usr/local/share/npm/bin/:$PATH
+fi
+
 # Homebrew
 if which brew > /dev/null; then
   export PATH=/usr/local/bin:/usr/local/sbin:$PATH
