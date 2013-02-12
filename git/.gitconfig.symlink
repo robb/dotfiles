@@ -12,6 +12,8 @@
   subup = submodule update --recursive --init
   puff  = pull --ff --ff-only
   hub   = !hub
+  fs    = flow feature start
+  ff    = flow feature finish
 
 [color]
   branch = auto
