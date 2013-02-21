@@ -29,3 +29,6 @@
 [branch "development"]
   remote = origin
   merge  = refs/heads/development
+
+[credential]
+  helper = osxkeychain
