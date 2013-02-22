@@ -37,6 +37,11 @@ if which brew > /dev/null; then
   export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 fi
 
+# Cabal
+if [ -d ~/.cabal/bin ]; then
+  export PATH=~/.cabal/bin:$PATH
+fi
+
 # Android
 if [ -d /usr/local/Cellar/android-sdk/r20 ]; then
   export ANDROID_HOME=/usr/local/Cellar/android-sdk/r20
