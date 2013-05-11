@@ -1,3 +1,7 @@
+# Completion System
+autoload -U compinit
+compinit -i
+
 # Show completion menu on succesive tab press
 setopt auto_menu
 setopt complete_in_word

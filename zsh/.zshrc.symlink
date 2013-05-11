@@ -1,36 +1,20 @@
-# We're going to need UTF-8, badly
+# Locale
 export LANG=en_US.UTF-8
 
-# Load and run compinit
-autoload -U compinit
-compinit -i
+# .dotfiles
+export DOTFILES=$HOME/.dotfiles
 
-# Enable globbing for hidden files, advanced globbing
-setopt globdots
-setopt extendedglob
+# Configuration files
+typeset -U files
+files=($DOTFILES/**/*.zsh)
 
-# Source all zsh config files excluding the plugins directory
-DOTFILES_DIR=$HOME/.dotfiles
+# ZSH Configuration
+for file in ${(M)files:#$DOTFILES/zsh/*.zsh}
+  source $file
 
-for config_file ($DOTFILES_DIR/**/*.zsh~($DOTFILES_DIR/plugins/*.zsh)(.))
-  source $config_file
-
-# Enable piping to multiple outputs
-setopt multios
-
-# Automaticall cd into directories when typing their name
-setopt auto_cd
-setopt cdable_vars
-
-setopt auto_pushd
-setopt auto_menu
-
-# Enable spelling correction
-setopt correct
-
-if which npm > /dev/null; then
-  export PATH=/usr/local/share/npm/bin/:$PATH
-fi
+# Other Configuration
+for file in ${${files:#$DOTFILES/zsh/*.zsh}:#$DOTFILES/plugins/*.zsh}
+  source $file
 
 # Homebrew
 if which brew > /dev/null; then

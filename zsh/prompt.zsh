@@ -6,9 +6,9 @@ autoload colors && colors
 setopt prompt_subst
 
 # Load the zsh-syntax-highlighting plugin
-if [ -f $DOTFILES_DIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]
+if [ -f $DOTFILES/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]
 then
-  source $DOTFILES_DIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  source $DOTFILES/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
   # Enable highlighters
   ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
