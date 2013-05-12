@@ -162,13 +162,18 @@ function git_dirty_state() {
     return
   fi
 
-  untracked="$(git ls-files --other --exclude-standard | wc -l | tr -d ' ')"
-  changed="$(git diff --name-status | wc -l | tr -d ' ')"
-  staged="$(git diff --staged --name-status | wc -l | tr -d ' ')"
+  test -z "$(git ls-files --exclude-standard --others)" 2> /dev/null
+  untracked=$?
 
-  if  [ "$staged" -gt 0 ]; then
+  git diff-files --quiet 2> /dev/null
+  changed=$?
+
+  git diff-index --quiet --cached HEAD
+  staged=$?
+
+  if  [ "$staged" -eq 1 ]; then
     echo "$(git_color_for_time_since_last_commit)$ZSH_THEME_GIT_PROMPT_STAGED"
-  elif [ "$untracked" -gt 0 ] || [ "$changed" -gt 0 ]; then
+  elif [ "$untracked" -eq 1 ] || [ "$changed" -eq 1 ]; then
     echo "$(git_color_for_time_since_last_commit)$ZSH_THEME_GIT_PROMPT_UNSTAGED"
   else
     echo "$(git_color_for_time_since_last_commit)$ZSH_THEME_GIT_PROMPT_CLEAN"
