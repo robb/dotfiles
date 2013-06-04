@@ -32,3 +32,5 @@
 
 [credential]
   helper = osxkeychain
+[rerere]
+	enabled = true
