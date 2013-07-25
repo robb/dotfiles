@@ -32,5 +32,9 @@
 
 [credential]
   helper = osxkeychain
+
 [rerere]
-	enabled = true
+  enabled = true
+
+[diff]
+  algorithm = patience
