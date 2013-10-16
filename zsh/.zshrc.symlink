@@ -23,6 +23,11 @@ if which brew &> /dev/null; then
   export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 fi
 
+# NPM
+if which npm &> /dev/null; then
+  export PATH=/usr/local/share/npm/bin:$PATH
+fi
+
 # Cabal
 if [ -d ~/.cabal/bin ]; then
   export PATH=~/.cabal/bin:$PATH
