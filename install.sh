@@ -44,3 +44,7 @@ for file in $symlinks; do
     echo "Installing $target"
     ln -s "$PWD/$file" "$target"
 done
+
+set -e
+
+find . -name "*.install" | while read installer ; do sh -c "${installer}" ; done
