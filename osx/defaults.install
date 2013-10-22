@@ -1,10 +1,7 @@
 #!/bin/sh
 
-# Disable Mountain-Lion-style shadows
-defaults write NSGlobalDomain NSUseLeopardWindowValues NO
-
-# Re-enable Mountain-Lion-style shadows for Safari
-defaults write com.apple.Safari NSUseLeopardWindowValues YES
+# Use AirDrop over every interface. srsly this should be a default.
+defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 
 
 # Expand save panel by default
@@ -79,3 +76,14 @@ defaults write com.apple.dock showhidden -bool true
 
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
+
+
+# Hide Safari's bookmark bar.
+defaults write com.apple.Safari ShowFavoritesBar -bool false
+
+# Set up Safari for development.
+defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+defaults write com.apple.Safari IncludeDevelopMenu -bool true
+defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
+defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
