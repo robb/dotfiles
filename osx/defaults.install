@@ -61,6 +61,9 @@ defaults write com.apple.dock launchanim -bool false
 # Minimal Dock
 defaults write com.apple.dock no-glass -bool true
 
+# Move Dock to the right
+defaults write com.apple.dock orientation -string "right"
+
 # Remove the auto-hiding Dock delay
 defaults write com.apple.dock autohide-delay -float 0
 
