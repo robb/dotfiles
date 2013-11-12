@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# Xcode specific settings
+
+# Trim trailing whitespace
+defaults write com.apple.dt.Xcode DVTTextEditorTrimTrailingWhitespace -bool true
+
+# Trim whitespace only lines
+defaults write com.apple.dt.Xcode DVTTextEditorTrimWhitespaceOnlyLines -bool true
+
+# Show invisible characters
+defaults write com.apple.dt.Xcode DVTTextShowInvisibleCharacters -bool true
