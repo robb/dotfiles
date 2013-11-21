@@ -34,3 +34,7 @@ setopt prompt_subst
 
 # Scripts and Functions
 setopt multios
+
+# zmv
+autoload -U zmv
+alias mmv="noglob zmv"
