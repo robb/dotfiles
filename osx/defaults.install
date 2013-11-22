@@ -61,6 +61,12 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 
+## Mouse
+
+# Set mouse tracking speed to reasonably fast
+defaults write NSGlobalDomain com.apple.mouse.scaling -float 2
+
+
 ## Finder
 
 # Use list view in all Finder windows by default
