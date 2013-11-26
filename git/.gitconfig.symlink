@@ -4,6 +4,7 @@
 [core]
   excludesfile = ~/.gitignore
   editor       = /usr/bin/vim
+  trustctime   = false
 
 [alias]
   co    = checkout
