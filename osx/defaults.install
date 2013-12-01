@@ -94,6 +94,9 @@ defaults write com.apple.dock no-glass -bool true
 # Move Dock to the right
 defaults write com.apple.dock orientation -string "right"
 
+# Move Dock to the top
+defaults write com.apple.dock pinning -string "start"
+
 # Remove the auto-hiding Dock delay
 defaults write com.apple.dock autohide-delay -float 0
 
