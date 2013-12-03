@@ -83,6 +83,14 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 chflags nohidden ~/Library
 
 
+## Menu Bar
+
+# Only show WiFi menu and clock
+defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/AirPort.menu" "/System/Library/CoreServices/Menu Extras/Clock.menu"
+
+# Use analog clock
+defaults write com.apple.menuextra.clock IsAnalog -bool true
+
 ## Dock
 
 # Don’t animate opening applications from the Dock
