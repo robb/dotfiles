@@ -10,3 +10,10 @@ defaults write com.apple.dt.Xcode DVTTextEditorTrimWhitespaceOnlyLines -bool tru
 
 # Show invisible characters
 defaults write com.apple.dt.Xcode DVTTextShowInvisibleCharacters -bool true
+
+# Show line numbers
+defaults write com.apple.dt.Xcode DVTTextShowLineNumbers -bool true
+
+# Show ruler at 80 chars
+defaults write com.apple.dt.Xcode DVTTextShowPageGuide -bool true
+defaults write com.apple.dt.Xcode DVTTextPageGuideLocation -int 80
