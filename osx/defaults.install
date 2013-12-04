@@ -103,6 +103,15 @@ defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreS
 # Use analog clock
 defaults write com.apple.menuextra.clock IsAnalog -bool true
 
+# Hide Spotlight Icon
+#
+# To restore the icon, run
+#
+#     sudo chmod 755 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
+#
+sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
+
+
 ## Dock
 
 # Don’t animate opening applications from the Dock
