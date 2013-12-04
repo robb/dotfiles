@@ -305,15 +305,15 @@
 			<key>Background Image Location</key>
 			<string></string>
 			<key>Blend</key>
-			<real>0.5</real>
+			<real>0.31006482243537903</real>
 			<key>Blink Allowed</key>
 			<false/>
 			<key>Blinking Cursor</key>
 			<false/>
 			<key>Blur</key>
-			<false/>
+			<true/>
 			<key>Blur Radius</key>
-			<real>8.4981250762939453</real>
+			<real>8.0717620849609375</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -617,7 +617,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.16976931691169739</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
