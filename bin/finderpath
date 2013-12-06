@@ -1,0 +1,28 @@
+#!/bin/zsh -f
+#
+# Based on posd by William G. Scott
+# http://scottlab.ucsc.edu/xtal/iterm_tab_customization.html
+#
+
+read -r -d '' script <<END
+try
+    tell application "Finder" to set the source_folder to (folder of the front window) as alias
+on error -- no open folder windows
+    set the source_folder to path to desktop folder as alias
+end try
+
+set thePath to (POSIX path of the source_folder as string)
+set result to thePath
+END
+
+thePath=$(echo $script | osascript 2> /dev/null)
+
+if [[ -n "${thePath%/*}" ]]; then
+    if [[ -d "$thePath" ]]; then
+        echo "${thePath%/}"
+    else
+        echo "${thePath%/*}"
+    fi
+else
+   echo "/"
+fi

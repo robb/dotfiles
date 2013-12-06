@@ -1,0 +1,1 @@
+alias cdf='cd $(finderpath)'
