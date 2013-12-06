@@ -1,1 +1,1 @@
-alias cdf='cd $(finderpath)'
+alias cdf='cd "$(finderpath)"'
