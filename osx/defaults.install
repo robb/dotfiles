@@ -7,8 +7,8 @@
 # Disable Resume system-wide
 defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
 
-# Disable automatic termination of inactive apps
-defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
+# Enable automatic termination of inactive apps
+defaults write NSGlobalDomain NSDisableAutomaticTermination -bool false
 
 # Use AirDrop over every interface. srsly this should be a default.
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
