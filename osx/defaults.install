@@ -160,3 +160,10 @@ defaults write com.apple.dock mru-spaces -bool false
 
 # Set edge-dragging delay to 0.7
 defaults write com.apple.dock workspaces-edge-delay -float 1.0
+
+
+### Screen Shots
+
+# Move screen shots to ~/Screen Shots
+mkdir -p ~/Screen\ Shots
+defaults write com.apple.screencapture location
