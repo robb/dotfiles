@@ -141,6 +141,17 @@ defaults write com.apple.dock autohide -bool true
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
 
+# Set the icon size to 32 points
+defaults write com.apple.dock tilesize -int 32
+
+# Prevent the Dock from changing size
+defaults write com.apple.dock size-immutable -bool YES
+
+# Prevent icons from bouncing
+defaults write com.apple.dock no-bouncing -bool true
+
+# Disable the indicator lights for currently running apps
+defaults write com.apple.dock show-process-indicators -bool true
 
 ### Spaces
 
