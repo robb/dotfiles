@@ -19,9 +19,7 @@ for file in ${${files:#$DOTFILES/zsh/*.zsh}:#$DOTFILES/plugins/*.zsh}
   source $file
 
 # Homebrew
-if which brew &> /dev/null; then
-  export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-fi
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # NPM
 if which npm &> /dev/null; then
