@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# Alfred specific settings
+
+# Use ⌥Space for bringin up Alfred
+defaults write com.runningwithcrayons.Alfred-Preferences hotkey.default -dict key -int 49 mod -int 524288 string Space
+
+# Use Silver Linings theme
+defaults write com.runningwithcrayons.Alfred-Preferences appearance.theme alfred.theme.custom.BF606809-1050-46BA-AB48-8267E2135439
