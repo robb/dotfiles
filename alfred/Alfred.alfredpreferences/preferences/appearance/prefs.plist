@@ -4,12 +4,12 @@
 <dict>
 	<key>themes</key>
 	<dict>
-		<key>alfred.theme.custom.4C64E7B9-3C24-4D97-ACFF-573775A1F059</key>
+		<key>alfred.theme.custom.E7C865B5-D9C3-456E-9F1E-9AFCED86EFD5</key>
 		<dict>
 			<key>background</key>
 			<data>
 			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2Jq
-			ZWN0AIWEAWMChARmZmZmAQEBg6RwfT+G
+			ZWN0AIWEAWMChARmZmZmAQEBg9ejcD+G
 			</data>
 			<key>border</key>
 			<data>
@@ -29,22 +29,22 @@
 			<key>resultSelectedBackgroundColor</key>
 			<data>
 			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2Jq
-			ZWN0AIWEAWMChARmZmZmg/xxej+D/HF6P4P8cXo/g2ZmZj+G
+			ZWN0AIWEAWMBhARmZmZmgwSNeT+DGot5P4MwjHk/g83MTD+G
 			</data>
 			<key>resultSelectedSubtextColor</key>
 			<data>
 			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2Jq
-			ZWN0AIWEAWMChARmZmZmgwAAAD+DAAAAP4MAAAA/AYY=
+			ZWN0AIWEAWMBhARmZmZmAAAAAYY=
 			</data>
 			<key>resultSelectedTextColor</key>
 			<data>
 			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2Jq
-			ZWN0AIWEAWMChARmZmZmg83MzD2DzczMPYPNzMw9AYY=
+			ZWN0AIWEAWMBhARmZmZmAAAAAYY=
 			</data>
 			<key>resultSubtextColor</key>
 			<data>
 			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2Jq
-			ZWN0AIWEAWMChARmZmZmg2ZmJj+DZmYmP4NmZiY/AYY=
+			ZWN0AIWEAWMChARmZmZmAAAAg83MzD6G
 			</data>
 			<key>resultSubtextFont</key>
 			<string>Helvetica</string>
@@ -53,7 +53,7 @@
 			<key>resultTextColor</key>
 			<data>
 			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2Jq
-			ZWN0AIWEAWMChARmZmZmg83MzD2DzczMPYPNzMw9AYY=
+			ZWN0AIWEAWMChARmZmZmAAAAg83MzD6G
 			</data>
 			<key>resultTextFont</key>
 			<string>Helvetica</string>
@@ -95,7 +95,7 @@
 			<key>separatorColor</key>
 			<data>
 			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2Jq
-			ZWN0AIWEAWMChARmZmZmg7l1bD+DuXVsP4O5dWw/AYY=
+			ZWN0AIWEAWMBhARmZmZmAYNS/n8/g27/fz+D9ijcPoY=
 			</data>
 			<key>shortcutColor</key>
 			<data>
@@ -109,10 +109,10 @@
 			<key>shortcutSelectedColor</key>
 			<data>
 			BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2Jq
-			ZWN0AIWEAWMChARmZmZmg6emJj+DqagoP4OpqCg/AYY=
+			ZWN0AIWEAWMChARmZmZmAAAAAYY=
 			</data>
 			<key>uid</key>
-			<string>alfred.theme.custom.4C64E7B9-3C24-4D97-ACFF-573775A1F059</string>
+			<string>alfred.theme.custom.E7C865B5-D9C3-456E-9F1E-9AFCED86EFD5</string>
 			<key>widthSize</key>
 			<integer>2</integer>
 		</dict>
