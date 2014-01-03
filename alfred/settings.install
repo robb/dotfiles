@@ -7,3 +7,6 @@ defaults write com.runningwithcrayons.Alfred-Preferences hotkey.default -dict ke
 
 # Use Silver Linings theme
 defaults write com.runningwithcrayons.Alfred-Preferences appearance.theme alfred.theme.custom.BF606809-1050-46BA-AB48-8267E2135439
+
+# Set the syncfolder
+defaults write com.runningwithcrayons.Alfred-Preferences syncfolder "$DOTFILES/alfred"
