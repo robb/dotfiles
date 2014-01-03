@@ -15,6 +15,9 @@ function precmd() {
     printf "\033]50;SetMark\007\033]50;RemoteHost='$USER'@'`hostname -f`'\007\033]50;CurrentDir=$PWD\007"
 }
 
+# zsh-completions package
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 # ZSH Configuration
 for file in ${(M)files:#$DOTFILES/zsh/*.zsh}
   source $file
