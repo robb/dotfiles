@@ -3,3 +3,8 @@
 *.png diff=image
 
 *.pbxproj -crlf -diff -merge
+
+*.htm diff=html
+*.html diff=html
+*.m diff=objc
+*.rb diff=ruby
