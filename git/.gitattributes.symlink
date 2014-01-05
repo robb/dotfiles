@@ -1,3 +1,5 @@
 *.gif diff=image
 *.jpg diff=image
 *.png diff=image
+
+*.pbxproj -crlf -diff -merge
