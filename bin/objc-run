@@ -1,0 +1,230 @@
+#!/bin/bash
+
+function main
+{
+	if [[ $# -lt 1 ]]; then 
+		echo "objc-run usage: objc-run file.m [params]" 1>&2
+		exit 1
+	fi
+
+	# check if the source file contains an embedded podfile for CocoaPods
+
+	podstart=`awk '/podfile-start/{print NR+1}' "$1"`
+	podend=`awk '/podfile-end/{print NR-1}' "$1"`
+
+	if [ ${#podstart} -gt 0 ]
+	then
+		handleSourceFileWithCocoaPods "$@"
+	else
+		handleSourceFileWithoutCocoaPods "$@"
+	fi
+}
+
+function handleSourceFileWithoutCocoaPods
+{
+	filepath="$1"
+	filename="$(basename "$filepath")"
+	appname="${filename%.*}"
+	target="$(dirname "$filepath")/$appname"
+	shift
+
+	# check if there's already a file with the same name as our compiled app, if so exit
+	if [[ -f "$target" ]]; then
+		echo "objc-run: file already exists at $dirname/$appname ... exiting" 1>&2
+		exit 1
+	fi
+
+	# compile the file
+	# remove shebangs on first line, first chars only
+	clang -o "$target" -Wall -std=c99 -framework Foundation -lobjc -fobjc-arc -fmodules -x objective-c <(awk 'NR>1 || !/^#!/' "$filepath")
+	clangExitCode=$?
+
+	# on clang success, run compiled application and remove it
+	if [[ $clangExitCode -eq 0 ]]; then 
+		"$target" "$@"
+		rm -f "$target"
+	else
+		echo "objc-run: clang returned with error" 1>&2
+		exit 1
+	fi
+
+	# exit explicitly with no error
+	exit 0
+}
+
+function handleSourceFileWithCocoaPods
+{
+	filepath="$1"
+	filename="$(basename "$filepath")"
+	appname="${filename%.*}"
+	target="$(dirname "$filepath")/$appname"
+	shift
+	
+	# check if there's already a file with the same name as our compiled app, if so exit
+	if [[ -f "$target" ]]; then
+		echo "objc-run: file already exists at $dirname/$appname ... exiting" 1>&2
+		exit 1
+	fi
+	
+	# check if a  temporary project directory already exists, if not create it
+	sourcePathHash=`md5 -qs "$filepath"`
+	projectDirPath="${TMPDIR}objc-run/$sourcePathHash"
+	if [ ! -d $projectDirPath ]
+	then
+		createProjectDirectory "$projectDirPath"
+	fi
+
+	# copy source file into temp dir, removing shebang
+	awk 'NR>1 || !/^#!/' "$filepath" > "$projectDirPath/main.m"
+	
+	# extract embedded podfile and save it into projectdir
+	podstart=`awk '/podfile-start/{print NR+1}' $filepath`
+	podend=`awk '/podfile-end/{print NR-1}' $filepath`
+	sed -n ${podstart},${podend}p $filepath > "$projectDirPath/podfile.new"
+	
+	(
+		cd "$projectDirPath"
+
+		if [ ! -f podfile ]
+		then
+			mv podfile.new podfile
+			echo "Installing pod"
+			pod install
+		else
+			if ! diff podfile.new podfile >/dev/null 2>&1
+			then
+				echo "Updating pod"
+				mv -f podfile.new podfile
+				pod update
+			else
+				rm podfile.new
+			fi
+		fi
+		
+	)
+	xcodebuild -workspace "$projectDirPath/clitest.xcworkspace/" -scheme clitest -configuration Release DEPLOYMENT_LOCATION=YES DSTROOT=build DWARF_DSYM_FOLDER_PATH=build 
+	xcodebuildExitCode=$?
+
+	# on clang success, run compiled application and remove it
+	if [[ $xcodebuildExitCode -eq 0 ]]; then 
+		cp "$projectDirPath/build/usr/local/bin/clitest" $target
+		trap '{ rm -f "$target" ; exit 1; }' INT
+		"$target" "$@"
+		trap '' INT
+		rm -f "$target"
+	else
+		echo "objc-run: xcodebuild returned with error" 1>&2
+		exit 1
+	fi
+	
+	exit 0
+}
+
+function writePCHfile
+{
+cat <<EOF > "$1"
+#ifdef __OBJC__
+	#import <Foundation/Foundation.h>
+#endif
+
+EOF
+}
+
+function writePBXFile
+{
+# To "compress" a PBX file for use here use the following command:
+# % gzip --stdout ${PBXFile} | base64 --break=64
+cat <<EOF | base64 --decode | gunzip --stdout > "$1"
+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
+EOF
+}
+
+function createXcodeProjectPackage
+{
+	mkdir -p "$1"
+	writePBXFile "$1/project.pbxproj"
+	schemesDir="$1/xcuserdata/$USER.xcuserdatad/xcschemes"
+	mkdir -p "$schemesDir"
+	writeXcschemeFile "$schemesDir/clitest.xcscheme"
+	writeXcschememanagementFile "$schemesDir/xcschememanagement.plist"
+}
+
+function createProjectDirectory
+{
+	mkdir -p "$1"
+	createXcodeProjectPackage "$1/clitest.xcodeproj"
+	writePCHfile "$1/clitest-Prefix.pch"
+}
+
+function writeXcschemeFile
+{
+cat <<EOF | base64 --decode | gunzip --stdout > "$1"
+H4sICIoH1FIAA2NsaXRlc3QueGNzY2hlbWUA7ZZtb9owEMff91NEeT8I3apVU0oF
+DUiVWKmg3cNLEx+pN8eO/MBKP33tOIEY2MjWSdOk8gbl7n93zuVnn+PLx5wGKxCS
+cHYR9jpRGABLOSYsuwjv78ZvzsPL/kk8Tx8gh5MgCCZIqvsiEwjDJxcWXARhdBZF
+oXWvtrZe523Yt7Z4qAnFg1QZh302vwIJRClQ8gSlEy0oSBv0dTQPK83COq7zgpKU
+qAQKYNgsjWx1/UrYzD9iShhJ7TrgXW9ddZExF3cglXnnnSX4mplm7JjmVvAlocdU
+A5E+kNVRFUN0/dRQ9T1ZvOncDJYgTG/A85vfRnFtWqfIkoCwuQpBciTW4Z6cajA+
+pnz5uySJRuPRsHf+/jQ5642jKLk67UWn+/F1uRuUg41MKVGmsT8vdEy4eTN8xZlC
+hLkVpfXDhyqw82iYNSn5t90mdfe71ISju0vHBqpdT02V53AWC4+HtwQKqQKcwEJn
+GQi/n1/sWju1b8w1w8gGb0ydySQZhju5Jkgzswvb5qrlfq4Hrim+l+C8blcPRCZH
+bHVo95mmL0mmRZnSCspC241nX7zcutuu7Zs+olTw0WOBmKw71g7g36H3Rei247Yd
+tC8j9le4xt0DnXQNb8LoPu1/gSN1FKo1LfsZ1XYt4UpLxfPPXHw3519ChKnJxdqq
+bqZtEK0kJGNcgLy1U0kqs9K5QgqmzC3HT4dtYMJTnRtdNdv2j2gztviPCU/LenOS
+a7qpvD+T7Hc0EwHrVNnhYR9f+f9z/o/1NB5gTOzXQHRa2P/GuXTYFXeb28WZ3AgH
+fwe1PzglWgG+45z6X+KvsD0zmw9JaEnsK4v/isW460HkbO4653N1dMoacJthVaby
++tgm0w4wAlaAaBV+zaYiQ8xcwYVHjCnZzG9u/13He//kGXeRevcvDAAA
+EOF
+}
+
+function writeXcschememanagementFile
+{
+cat <<EOF | base64 --decode | gunzip --stdout > "$1"
+H4sICIoH1FIAA3hjc2NoZW1lbWFuYWdlbWVudC5wbGlzdAB1kMtuwjAQRdfwFa73
+ZBLUB6pCEOCgIqE2EmHRZeqMwGoelj0p8Pd1oClFoivPjM9cHzmcHMqCfaGxqq7G
+PPB8zrCSda6q7Zhv0sVgxCdRP7wTb/P0PYmZLpQllmxmq+Wc8QHAVOsCAUQqWLJa
+rlPmMgDiV874jkg/A+z3ey9rKU/WZQtaSEyt0dBx5cIGbsHLKefumXP6lY6b5kpS
+1O+Fn3iM1nKHJW4smjVlhCG0Q3f3w5whWShCS95B2hPeURfszNUmR/OiKvoFeqHr
+cIsmegyhK9tF6CTgyqbR2qC1s0YVefZR4LShWhrMyPnfdrsXwo8X8SwYPQ3FQ7Dw
+fTEfBv7wP0dtVJmZ4x9DMg3CTanLefrIqP8NsMnKEN8BAAA=
+EOF
+}
+
+main "$@"
