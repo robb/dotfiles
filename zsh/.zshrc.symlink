@@ -26,9 +26,6 @@ for file in ${(M)files:#$DOTFILES/zsh/*.zsh}
 for file in ${${files:#$DOTFILES/zsh/*.zsh}:#$DOTFILES/plugins/*.zsh}
   source $file
 
-source $DOTFILES/plugins/mouse/mouse.zsh
-zle-toggle-mouse
-
 # Homebrew
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
