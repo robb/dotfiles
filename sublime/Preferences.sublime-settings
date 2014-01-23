@@ -1,11 +1,11 @@
 {
 	"caret_style": "smooth",
-	"color_scheme": "Packages/Theme - Flatland/Flatland-Monokai.tmTheme",
+	"color_scheme": "Packages/Theme - Flatland/Flatland Monokai.tmTheme",
 	"create_window_at_startup": false,
 	"draw_white_space": "all",
 	"ensure_newline_at_eof_on_save": true,
-	"font_size": 12,
 	"font_face": "Menlo",
+	"font_size": 12,
 	"ignored_packages":
 	[
 		"Sublimerge",
@@ -17,7 +17,7 @@
 	[
 		80
 	],
-	"theme": "Flatland.sublime-theme",
+	"theme": "Flatland Dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"use_simple_full_screen": true
