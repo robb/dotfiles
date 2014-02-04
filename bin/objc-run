@@ -2,129 +2,129 @@
 
 function main
 {
-	if [[ $# -lt 1 ]]; then 
-		echo "objc-run usage: objc-run file.m [params]" 1>&2
-		exit 1
-	fi
+    if [[ $# -lt 1 ]]; then
+        echo "objc-run usage: objc-run file.m [params]" 1>&2
+        exit 1
+    fi
 
-	# check if the source file contains an embedded podfile for CocoaPods
+    # check if the source file contains an embedded podfile for CocoaPods
 
-	podstart=`awk '/podfile-start/{print NR+1}' "$1"`
-	podend=`awk '/podfile-end/{print NR-1}' "$1"`
+    podstart=`awk '/podfile-start/{print NR+1}' "$1"`
+    podend=`awk '/podfile-end/{print NR-1}' "$1"`
 
-	if [ ${#podstart} -gt 0 ]
-	then
-		handleSourceFileWithCocoaPods "$@"
-	else
-		handleSourceFileWithoutCocoaPods "$@"
-	fi
+    if [ ${#podstart} -gt 0 ]
+    then
+        handleSourceFileWithCocoaPods "$@"
+    else
+        handleSourceFileWithoutCocoaPods "$@"
+    fi
 }
 
 function handleSourceFileWithoutCocoaPods
 {
-	filepath="$1"
-	filename="$(basename "$filepath")"
-	appname="${filename%.*}"
-	target="$(dirname "$filepath")/$appname"
-	shift
+    filepath="$1"
+    filename="$(basename "$filepath")"
+    appname="${filename%.*}"
+    target="$(dirname "$filepath")/$appname"
+    shift
 
-	# check if there's already a file with the same name as our compiled app, if so exit
-	if [[ -f "$target" ]]; then
-		echo "objc-run: file already exists at $dirname/$appname ... exiting" 1>&2
-		exit 1
-	fi
+    # check if there's already a file with the same name as our compiled app, if so exit
+    if [[ -f "$target" ]]; then
+        echo "objc-run: file already exists at $dirname/$appname ... exiting" 1>&2
+        exit 1
+    fi
 
-	# compile the file
-	# remove shebangs on first line, first chars only
-	clang -o "$target" -Wall -std=c99 -framework Foundation -lobjc -fobjc-arc -fmodules -x objective-c <(awk 'NR>1 || !/^#!/' "$filepath")
-	clangExitCode=$?
+    # compile the file
+    # remove shebangs on first line, first chars only
+    clang -o "$target" -Wall -std=c99 -framework Foundation -lobjc -fobjc-arc -fmodules -x objective-c <(awk 'NR>1 || !/^#!/' "$filepath")
+    clangExitCode=$?
 
-	# on clang success, run compiled application and remove it
-	if [[ $clangExitCode -eq 0 ]]; then 
-		"$target" "$@"
-		rm -f "$target"
-	else
-		echo "objc-run: clang returned with error" 1>&2
-		exit 1
-	fi
+    # on clang success, run compiled application and remove it
+    if [[ $clangExitCode -eq 0 ]]; then
+        "$target" "$@"
+        rm -f "$target"
+    else
+        echo "objc-run: clang returned with error" 1>&2
+        exit 1
+    fi
 
-	# exit explicitly with no error
-	exit 0
+    # exit explicitly with no error
+    exit 0
 }
 
 function handleSourceFileWithCocoaPods
 {
-	filepath="$1"
-	filename="$(basename "$filepath")"
-	appname="${filename%.*}"
-	target="$(dirname "$filepath")/$appname"
-	shift
-	
-	# check if there's already a file with the same name as our compiled app, if so exit
-	if [[ -f "$target" ]]; then
-		echo "objc-run: file already exists at $dirname/$appname ... exiting" 1>&2
-		exit 1
-	fi
-	
-	# check if a  temporary project directory already exists, if not create it
-	sourcePathHash=`md5 -qs "$filepath"`
-	projectDirPath="${TMPDIR}objc-run/$sourcePathHash"
-	if [ ! -d $projectDirPath ]
-	then
-		createProjectDirectory "$projectDirPath"
-	fi
+    filepath="$1"
+    filename="$(basename "$filepath")"
+    appname="${filename%.*}"
+    target="$(dirname "$filepath")/$appname"
+    shift
 
-	# copy source file into temp dir, removing shebang
-	awk 'NR>1 || !/^#!/' "$filepath" > "$projectDirPath/main.m"
-	
-	# extract embedded podfile and save it into projectdir
-	podstart=`awk '/podfile-start/{print NR+1}' $filepath`
-	podend=`awk '/podfile-end/{print NR-1}' $filepath`
-	sed -n ${podstart},${podend}p $filepath > "$projectDirPath/podfile.new"
-	
-	(
-		cd "$projectDirPath"
+    # check if there's already a file with the same name as our compiled app, if so exit
+    if [[ -f "$target" ]]; then
+        echo "objc-run: file already exists at $dirname/$appname ... exiting" 1>&2
+        exit 1
+    fi
 
-		if [ ! -f podfile ]
-		then
-			mv podfile.new podfile
-			echo "Installing pod"
-			pod install
-		else
-			if ! diff podfile.new podfile >/dev/null 2>&1
-			then
-				echo "Updating pod"
-				mv -f podfile.new podfile
-				pod update
-			else
-				rm podfile.new
-			fi
-		fi
-		
-	)
-	xcodebuild -workspace "$projectDirPath/clitest.xcworkspace/" -scheme clitest -configuration Release DEPLOYMENT_LOCATION=YES DSTROOT=build DWARF_DSYM_FOLDER_PATH=build 
-	xcodebuildExitCode=$?
+    # check if a  temporary project directory already exists, if not create it
+    sourcePathHash=`md5 -qs "$filepath"`
+    projectDirPath="${TMPDIR}objc-run/$sourcePathHash"
+    if [ ! -d $projectDirPath ]
+    then
+        createProjectDirectory "$projectDirPath"
+    fi
 
-	# on clang success, run compiled application and remove it
-	if [[ $xcodebuildExitCode -eq 0 ]]; then 
-		cp "$projectDirPath/build/usr/local/bin/clitest" $target
-		trap '{ rm -f "$target" ; exit 1; }' INT
-		"$target" "$@"
-		trap '' INT
-		rm -f "$target"
-	else
-		echo "objc-run: xcodebuild returned with error" 1>&2
-		exit 1
-	fi
-	
-	exit 0
+    # copy source file into temp dir, removing shebang
+    awk 'NR>1 || !/^#!/' "$filepath" > "$projectDirPath/main.m"
+
+    # extract embedded podfile and save it into projectdir
+    podstart=`awk '/podfile-start/{print NR+1}' $filepath`
+    podend=`awk '/podfile-end/{print NR-1}' $filepath`
+    sed -n ${podstart},${podend}p $filepath > "$projectDirPath/Podfile.new"
+
+    (
+        cd "$projectDirPath"
+
+        if [ ! -f Podfile ]
+        then
+            mv Podfile.new Podfile
+            echo "Installing pod"
+            pod install
+        else
+            if ! diff Podfile.new Podfile >/dev/null 2>&1
+            then
+                echo "Updating pod"
+                mv -f Podfile.new Podfile
+                pod update
+            else
+                rm Podfile.new
+            fi
+        fi
+
+    )
+    xcodebuild -workspace "$projectDirPath/clitest.xcworkspace/" -scheme clitest -configuration Release DEPLOYMENT_LOCATION=YES DSTROOT=build DWARF_DSYM_FOLDER_PATH=build
+    xcodebuildExitCode=$?
+
+    # on clang success, run compiled application and remove it
+    if [[ $xcodebuildExitCode -eq 0 ]]; then
+        cp "$projectDirPath/build/usr/local/bin/clitest" $target
+        trap '{ rm -f "$target" ; exit 1; }' INT
+        "$target" "$@"
+        trap '' INT
+        rm -f "$target"
+    else
+        echo "objc-run: xcodebuild returned with error" 1>&2
+        exit 1
+    fi
+
+    exit 0
 }
 
 function writePCHfile
 {
 cat <<EOF > "$1"
 #ifdef __OBJC__
-	#import <Foundation/Foundation.h>
+    #import <Foundation/Foundation.h>
 #endif
 
 EOF
@@ -178,19 +178,19 @@ EOF
 
 function createXcodeProjectPackage
 {
-	mkdir -p "$1"
-	writePBXFile "$1/project.pbxproj"
-	schemesDir="$1/xcuserdata/$USER.xcuserdatad/xcschemes"
-	mkdir -p "$schemesDir"
-	writeXcschemeFile "$schemesDir/clitest.xcscheme"
-	writeXcschememanagementFile "$schemesDir/xcschememanagement.plist"
+    mkdir -p "$1"
+    writePBXFile "$1/project.pbxproj"
+    schemesDir="$1/xcuserdata/$USER.xcuserdatad/xcschemes"
+    mkdir -p "$schemesDir"
+    writeXcschemeFile "$schemesDir/clitest.xcscheme"
+    writeXcschememanagementFile "$schemesDir/xcschememanagement.plist"
 }
 
 function createProjectDirectory
 {
-	mkdir -p "$1"
-	createXcodeProjectPackage "$1/clitest.xcodeproj"
-	writePCHfile "$1/clitest-Prefix.pch"
+    mkdir -p "$1"
+    createXcodeProjectPackage "$1/clitest.xcodeproj"
+    writePCHfile "$1/clitest-Prefix.pch"
 }
 
 function writeXcschemeFile
