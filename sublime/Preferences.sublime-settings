@@ -25,6 +25,7 @@
 		80
 	],
 	"scroll_past_end": true,
+	"show_panel_on_build": false,
 	"theme": "Spacegray.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
