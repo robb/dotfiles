@@ -64,6 +64,8 @@
 	<true/>
 	<key>Hotkey</key>
 	<true/>
+	<key>HotkeyAutoHides</key>
+	<true/>
 	<key>HotkeyChar</key>
 	<integer>63248</integer>
 	<key>HotkeyCode</key>
@@ -127,9 +129,9 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>307 274 214 309 0 0 1440 878 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>207 205 924 485 0 0 1440 878 </string>
+	<string>207 205 924 485 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 900 0 0 1440 878 </string>
+	<string>0 0 2560 1440 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>2 0 570 451 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1254,7 +1256,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-01-15T22:41:49Z</date>
+	<date>2014-02-17T22:39:43Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -1302,6 +1304,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20140114-nightly</string>
+	<string>1.0.0.20140207-nightly</string>
 </dict>
 </plist>
