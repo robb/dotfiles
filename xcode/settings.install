@@ -17,3 +17,6 @@ defaults write com.apple.dt.Xcode DVTTextShowLineNumbers -bool true
 # Show ruler at 80 chars
 defaults write com.apple.dt.Xcode DVTTextShowPageGuide -bool true
 defaults write com.apple.dt.Xcode DVTTextPageGuideLocation -int 80
+
+# Enable internal debug menu
+defaults write com.apple.dt.Xcode ShowDVTDebugMenu -bool true
