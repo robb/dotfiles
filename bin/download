@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd ~/Downloads
+axel -n20 -a -o "$2" "$1"
