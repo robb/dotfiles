@@ -12,7 +12,7 @@
   cl    = clone --recursive
   st    = status
   subup = submodule update --recursive --init
-  hub   = !hub
+  hub   = !gh
 	search = grep --break --heading --line-number
 
 [color]
