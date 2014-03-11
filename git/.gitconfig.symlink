@@ -13,6 +13,7 @@
   st    = status
   subup = submodule update --recursive --init
   hub   = !hub
+	search = grep --break --heading --line-number
 
 [color]
   branch = auto
@@ -42,3 +43,6 @@
 
 [diff "image"]
   textconv = sh ~/.dotfiles/git/difftools/image.sh
+[grep]
+	extendRegexp = true
+	lineNumber = true
