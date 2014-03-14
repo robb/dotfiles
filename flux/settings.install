@@ -2,8 +2,17 @@
 #
 # Flux specific settings
 
-# Set the night color to 3000K
-defaults write org.herf.Flux nightColorTemp 3000
+# Set the day color to 6500K
+defaults write org.herf.Flux dayColorTemp 6500
+
+# Set the late color to 2000K
+defaults write org.herf.Flux lateColorTemp 2000
+
+# Set the night color to 3400K
+defaults write org.herf.Flux nightColorTemp 3400
+
+# Wake up at 10:00
+defaults write org.herf.Flux wakeTime 600
 
 # Enable slow transitions
 defaults write org.herf.Flux transitionSpeed 1
