@@ -3,7 +3,7 @@ g () {
   then
     git status -sb
   else
-    git $*
+    git "$@"
   fi
 }
 compdef g=git
