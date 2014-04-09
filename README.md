@@ -3,7 +3,9 @@
 These are my .dotfiles.
 There are many like them, but these ones are mine.
 
-![](http://robb.is/img/prompt.png)
+<p align="center">
+   <img src="http://robb.is/img/prompt.png">
+</p>
 
 ## Install guide
 
