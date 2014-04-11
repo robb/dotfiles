@@ -58,16 +58,18 @@ function ssh_prompt() {
 function left_prompt() {
   cols="$(tput cols)"
   if [ "$cols" -gt 88 ]; then
-    echo "$(ssh_prompt)%{$ZSH_THEME_PROMPT_PATH_COLOR%}%2c $(exit_code)$(git_prompt)$(git_dirty_state)%{$reset_color%}"
+    echo "$(ssh_prompt)%{$ZSH_THEME_PROMPT_PATH_COLOR%}%2c $(git_prompt)$(git_dirty_state)%{$reset_color%}"
   else
-    echo "$(ssh_prompt)%{$ZSH_THEME_PROMPT_PATH_COLOR%}%2c $(exit_code)%{$reset_color%}"
+    echo "$(ssh_prompt)%{$ZSH_THEME_PROMPT_PATH_COLOR%}%2c%{$reset_color%}"
   fi
 }
 
 function right_prompt() {
   cols="$(tput cols)"
   if [ "$cols" -le 88 ]; then
-    echo "$(git_dirty_state)$(git_prompt)"
+    echo "$(exit_code)$(git_dirty_state)$(git_prompt)"
+  else
+    echo "$(exit_code)"
   fi
 }
 
@@ -188,7 +190,7 @@ function git_prompt() {
 }
 
 function exit_code {
-  echo "%(?,,%{$fg_bold[red]%}✗ )"
+  echo "%(?,,%{$fg_bold[red]%}✗)"
 }
 
 ZSH_THEME_GIT_PROMPT_BRANCH_PREFIX="%{$ZSH_THEME_GIT_PROMPT_BRANCH_COLOR%}"
