@@ -6,6 +6,10 @@ export LANG=en_US.UTF-8
 # .dotfiles
 export DOTFILES=$HOME/.dotfiles
 
+# Editors
+export EDITOR=vim
+export VISUAL=vim
+
 # Configuration files
 typeset -U files
 files=($DOTFILES/**/*.zsh)
