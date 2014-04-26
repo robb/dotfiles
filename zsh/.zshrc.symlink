@@ -63,6 +63,10 @@ fi
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
+# Go
+export GOPATH=$HOME/gocode
+export PATH=$GOPATH/bin:$PATH
+
 # .dotfiles/bin
 export PATH=$DOTFILES/bin:$PATH
 
