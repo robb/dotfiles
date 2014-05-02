@@ -2,6 +2,10 @@
 autoload -U compinit
 compinit -i
 
+# URL magic
+autoload -U url-quote-magic
+zle -N self-insert url-quote-magic
+
 # Show completion menu on succesive tab press
 setopt auto_menu
 setopt complete_in_word
