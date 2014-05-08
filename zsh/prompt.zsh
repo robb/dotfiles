@@ -60,7 +60,7 @@ function left_prompt() {
   if [ "$cols" -gt 88 ]; then
     echo "$(ssh_prompt)%{$ZSH_THEME_PROMPT_PATH_COLOR%}%2c $(git_prompt)$(git_dirty_state)%{$reset_color%}"
   else
-    echo "$(ssh_prompt)%{$ZSH_THEME_PROMPT_PATH_COLOR%}%2c%{$reset_color%}"
+    echo "$(ssh_prompt)%{$ZSH_THEME_PROMPT_PATH_COLOR%}%2c %{$reset_color%}"
   fi
 }
 
