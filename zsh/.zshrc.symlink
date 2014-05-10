@@ -13,9 +13,6 @@ setopt interactive_comments
 export EDITOR=vim
 export VISUAL=vim
 
-# Use emacs navigation
-bindkey -e
-
 # Configuration files
 typeset -U files
 files=($DOTFILES/**/*.zsh)
