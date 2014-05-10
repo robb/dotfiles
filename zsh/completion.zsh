@@ -11,6 +11,9 @@ setopt auto_menu
 setopt complete_in_word
 setopt always_to_end
 
+# If no match is found, pass the string on to the command
+setopt nonomatch
+
 # Enable menu selection
 zstyle ':completion:*' menu select
 
