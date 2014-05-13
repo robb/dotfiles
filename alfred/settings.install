@@ -6,7 +6,12 @@
 defaults write com.runningwithcrayons.Alfred-Preferences hotkey.default -dict key -int 49 mod -int 524288 string Space
 
 # Use Silver Linings theme
-defaults write com.runningwithcrayons.Alfred-Preferences appearance.theme alfred.theme.custom.BF606809-1050-46BA-AB48-8267E2135439
+defaults write com.runningwithcrayons.Alfred-Preferences appearance.theme alfred.theme.custom.E7C865B5-D9C3-456E-9F1E-9AFCED86EFD5
+
+# Enable blur hack
+defaults write com.runningwithcrayons.Alfred-2 experimentalBlur -int 5
 
 # Set the syncfolder
 defaults write com.runningwithcrayons.Alfred-Preferences syncfolder "$DOTFILES/alfred"
+
+string
