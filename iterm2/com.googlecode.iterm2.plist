@@ -129,11 +129,11 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>307 274 214 309 0 0 1440 878 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>207 194 924 485 0 0 1440 878 </string>
+	<string>207 194 924 485 0 0 1440 900 </string>
 	<key>NSWindow Frame SUUpdateAlertFrame</key>
 	<string>430 364 575 392 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>395 52 570 452 0 0 1440 878 </string>
+	<string>0 426 570 452 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>2 0 570 451 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1219,6 +1219,8 @@
 	<false/>
 	<key>PasteFromClipboard</key>
 	<false/>
+	<key>PinchToChangeFontSizeDisabled</key>
+	<true/>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -1271,7 +1273,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-05-16T09:23:56Z</date>
+	<date>2014-05-17T14:04:38Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -1306,6 +1308,8 @@
 	<true/>
 	<key>UseLionStyleFullscreen</key>
 	<true/>
+	<key>UseSystemCursorWhenPossible</key>
+	<false/>
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
@@ -1321,6 +1325,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20140514-nightly</string>
+	<string>1.0.0.20140516-nightly</string>
 </dict>
 </plist>
