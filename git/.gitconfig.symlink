@@ -1,52 +1,53 @@
 [include]
-  path = .dotfiles/secret/.gitconfig
+	path = .dotfiles/secret/.gitconfig
 
 [core]
-  excludesfile   = ~/.gitignore
-  attributesfile = ~/.gitattributes
-  editor         = /usr/bin/vim
-  trustctime     = false
+	excludesfile   = ~/.gitignore
+	attributesfile = ~/.gitattributes
+	editor         = /usr/bin/vim
+	trustctime     = false
 
 [alias]
-  co    = checkout
-  cl    = clone --recursive
-  st    = status
-  subup = submodule update --recursive --init
-  hub   = !gh
-  search = grep --break --heading --line-number
+	co    = checkout
+	cl    = clone --recursive
+	st    = status
+	subup = submodule update --recursive --init
+	hub   = !gh
+	search = grep --break --heading --line-number
 
 [color]
-  branch = auto
-  diff   = auto
-  status = auto
-  ui     = true
+	branch = auto
+	diff   = auto
+	status = auto
+	ui     = true
 
 [push]
-  default = current
+	default = current
 
 [branch "master"]
-  remote = origin
-  merge  = refs/heads/master
+	remote = origin
+	merge  = refs/heads/master
 
 [branch "development"]
-  remote = origin
-  merge  = refs/heads/development
+	remote = origin
+	merge  = refs/heads/development
 
 [credential]
-  helper = osxkeychain
+	helper = osxkeychain
 
 [rerere]
-  enabled = true
+	enabled = true
 
 [diff]
-  algorithm = patience
+	algorithm = patience
 
 [diff "image"]
-  textconv = sh ~/.dotfiles/git/difftools/image.sh
+	textconv = sh ~/.dotfiles/git/difftools/image.sh
 
 [grep]
-  extendRegexp = true
-  lineNumber = true
+	extendRegexp = true
+	lineNumber = true
+
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
