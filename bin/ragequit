@@ -1,3 +1,0 @@
-#!/bin/sh
-
-killall -9 $1 && echo "\n    (╯°□°）╯︵$(echo $1 |toilet -f term -F 180)\n"
