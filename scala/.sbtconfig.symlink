@@ -1,1 +1,0 @@
-export SBT_OPTS=-XX:MaxPermSize=1024M
