@@ -6,13 +6,13 @@
 defaults write org.herf.Flux dayColorTemp 6500
 
 # Set the late color to 2000K
-defaults write org.herf.Flux lateColorTemp 2000
+defaults write org.herf.Flux lateColorTemp 1900
 
 # Set the night color to 3400K
-defaults write org.herf.Flux nightColorTemp 3400
+defaults write org.herf.Flux nightColorTemp 3000
 
-# Wake up at 10:00
-defaults write org.herf.Flux wakeTime 600
+# Wake up at 9:30
+defaults write org.herf.Flux wakeTime 570
 
 # Enable slow transitions
 defaults write org.herf.Flux transitionSpeed 1
