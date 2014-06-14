@@ -1013,13 +1013,6 @@
 			</array>
 			<key>Keyboard Map</key>
 			<dict>
-				<key>0x74-0x100000</key>
-				<dict>
-					<key>Action</key>
-					<integer>27</integer>
-					<key>Text</key>
-					<string>CEF579F0-3317-4CB8-9A60-776FBB098DA6</string>
-				</dict>
 				<key>0x7f-0x100000</key>
 				<dict>
 					<key>Action</key>
