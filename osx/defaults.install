@@ -100,8 +100,8 @@ chflags nohidden ~/Library
 
 ## Menu Bar
 
-# Only show WiFi menu and clock
-defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/AirPort.menu" "/System/Library/CoreServices/Menu Extras/Clock.menu"
+# Only show Battery, WiFi menu and clock
+defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/Battery.menu" "/System/Library/CoreServices/Menu Extras/AirPort.menu" "/System/Library/CoreServices/Menu Extras/Clock.menu"
 
 # Use analog clock
 defaults write com.apple.menuextra.clock IsAnalog -bool true
