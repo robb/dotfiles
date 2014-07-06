@@ -67,6 +67,11 @@ fi
 export GOPATH=$HOME/gocode
 export PATH=$GOPATH/bin:$PATH
 
+# Postgresql.app
+if [ -d /Applications/Postgres.app/Contents/Versions/9.3/bin ]; then
+  export PATH=/Applications/Postgres.app/Contents/Versions/9.3/bin/:$PATH
+fi
+
 # .dotfiles/bin
 export PATH=$DOTFILES/bin:$PATH
 
