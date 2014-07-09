@@ -1,4 +1,4 @@
 #!/bin/sh
 
 cd ~/Downloads
-axel -n20 -a -o "$2" "$1"
+axel -n40 -a -o "$2" "$1"
