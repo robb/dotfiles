@@ -4,3 +4,5 @@
 mkdir -p ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
 
 ln -sf $DOTFILES/sublime/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
+
+ln -sf $DOTFILES/sublime/Elm.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Elm.sublime-settings
