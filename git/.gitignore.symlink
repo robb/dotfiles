@@ -21,6 +21,9 @@ DerivedData
 # AppCode etc.
 .idea/
 
+# Cocoapods
+Pods/
+
 # vim
 *~
 *.swp
