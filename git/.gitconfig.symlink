@@ -54,3 +54,5 @@
 
 [pull]
 	ff = only
+[help]
+	autocorrect = 1
