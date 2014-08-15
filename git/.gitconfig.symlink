@@ -55,4 +55,4 @@
 [pull]
 	ff = only
 [help]
-	autocorrect = 1
+	autocorrect = 10
