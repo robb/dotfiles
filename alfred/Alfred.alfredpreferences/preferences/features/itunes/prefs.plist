@@ -8,6 +8,8 @@
 	<false/>
 	<key>indexUntickedTracks</key>
 	<false/>
+	<key>keywordEnabled</key>
+	<false/>
 	<key>largerRandomAlbumsOnly</key>
 	<false/>
 	<key>showPlaylists</key>
