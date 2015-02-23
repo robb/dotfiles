@@ -44,6 +44,9 @@ else
   set listchars=tab:>\ ,trail:.,eol:-
 endif
 
+" Treat Podfiles like ruby
+au BufRead,BufNewFile Podfile set filetype=ruby
+
 " Color invisible characters
 "
 " NonText    affects eol, extends and precedes
