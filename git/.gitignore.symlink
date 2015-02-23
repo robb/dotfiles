@@ -25,6 +25,9 @@ DerivedData
 # Cocoapods
 Pods/
 
+# Carthage
+Carthage.build
+
 # vim
 *~
 *.swp
