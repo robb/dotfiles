@@ -75,5 +75,9 @@ fi
 # .dotfiles/bin
 export PATH=$DOTFILES/bin:$PATH
 
+# Arcanist (phabricator stuff)
+export PATH="$HOME/projects/arcanist/bin:$PATH"
+export DEV_HOME="$DEV_HOME:$PATH"
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
