@@ -60,9 +60,6 @@ if [ -d /usr/local/Cellar/android-ndk/r8/ ]; then
   export ANDROID_NDK_HOME=/usr/local/Cellar/android-ndk/r8/
 fi
 
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-
 # Go
 export GOPATH=$HOME/gocode
 export PATH=$GOPATH/bin:$PATH
@@ -81,3 +78,6 @@ export DEV_HOME="$DEV_HOME:$PATH"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
