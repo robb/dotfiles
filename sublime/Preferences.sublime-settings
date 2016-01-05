@@ -15,9 +15,9 @@
 	"font_size": 14,
 	"ignored_packages":
 	[
-		"Vintage",
 		"Markdown",
-		"Sublimerge"
+		"Sublimerge",
+		"Vintage"
 	],
 	"open_files_in_new_window": false,
 	"remember_open_files": false,
