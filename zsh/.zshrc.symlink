@@ -64,6 +64,10 @@ fi
 export GOPATH=$HOME/gocode
 export PATH=$GOPATH/bin:$PATH
 
+# Arcanist
+export DEV_HOME="$HOME/dev/arcanist/bin"
+export PATH="$DEV_HOME:$PATH"
+
 # Postgresql.app
 if [ -d /Applications/Postgres.app/Contents/Versions/9.3/bin ]; then
   export PATH=/Applications/Postgres.app/Contents/Versions/9.3/bin/:$PATH
@@ -81,3 +85,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+
+# added by travis gem
+[ -f /Users/robb/.travis/travis.sh ] && source /Users/robb/.travis/travis.sh
