@@ -67,9 +67,7 @@ function left_prompt() {
 function right_prompt() {
   cols="$(tput cols)"
   if [ "$cols" -le 88 ]; then
-    echo "$(exit_code)$(git_dirty_state)$(git_prompt)"
-  else
-    echo "$(exit_code)"
+    echo "$(git_dirty_state)$(git_prompt)"
   fi
 }
 
@@ -187,10 +185,6 @@ function git_prompt() {
   if [ -n "$sha" ]; then
     echo "$ZSH_THEME_GIT_PROMPT_PREFIX$(git_branch_state)$ZSH_THEME_GIT_PROMPT_SUFFIX"
   fi
-}
-
-function exit_code {
-  echo "%(?,,%{$fg_bold[red]%}✗)"
 }
 
 ZSH_THEME_GIT_PROMPT_BRANCH_PREFIX="%{$ZSH_THEME_GIT_PROMPT_BRANCH_COLOR%}"
