@@ -37,6 +37,12 @@ then
   ZSH_HIGHLIGHT_STYLES[assign]=none
 fi
 
+# Load the git-flow-completion plugin
+if [ -f $DOTFILES_DIR/plugins/git-flow-completion/git-flow-completion.zsh ]
+then
+  source $DOTFILES_DIR/plugins/git-flow-completion/git-flow-completion.zsh
+fi
+
 # Theme colors
 ZSH_THEME_PROMPT_PATH_COLOR=$FG[214]
 ZSH_THEME_GIT_PROMPT_COLOR=$FG[045]
