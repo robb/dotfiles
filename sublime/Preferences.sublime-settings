@@ -1,7 +1,7 @@
 {
 	"caret_style": "smooth",
 	"close_windows_when_empty": true,
-	"color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
+	"color_scheme": "Packages/ayu/ayu-mirage.tmTheme",
 	"copy_with_empty_selection": false,
 	"create_window_at_startup": false,
 	"draw_white_space": "all",
@@ -27,7 +27,7 @@
 	],
 	"scroll_past_end": true,
 	"show_panel_on_build": false,
-	"theme": "Spacegray.sublime-theme",
+	"theme": "ayu-mirage.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"use_simple_full_screen": false
