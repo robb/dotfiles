@@ -1,3 +1,0 @@
-#!/bin/sh
-
-open -a /Applications/VLC.app $1
