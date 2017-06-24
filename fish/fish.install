@@ -1,0 +1,9 @@
+#!/bin/sh
+set
+
+echo "Linking $DOTFILES/fish/config to ~/.config/fish"
+
+mkdir -p ~/.config
+rm -rf ~/.config/fish
+
+ln -sF $DOTFILES/fish/config/ ~/.config/fish
