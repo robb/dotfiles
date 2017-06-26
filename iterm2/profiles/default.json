@@ -1,0 +1,164 @@
+{
+  "Profiles": [
+    {
+      "Name": "Light",
+      "Guid": "1573B79E-2E67-4745-9339-63A995B37D46",
+
+      "Has Hotkey" : false,
+      "Blinking Cursor" : true,
+      "Cursor Type" : 1,
+      "Custom Directory" : "Recycle",
+      "Mouse Reporting": true,
+      "Name" : "Hotkey Window (1)",
+      "Non Ascii Font": "SFMono-Light 14",
+      "Non-ASCII Anti Aliased": true,
+      "Normal Font" : "SFMono-Light 14",
+      "Show Mark Indicators": false,
+      "Silence Bell" : true,
+      "Terminal Type" : "xterm-256color-italic",
+      "Thin Strokes": 1,
+      "Use Bright Bold" : false,
+      "Use Italic Font" : true,
+      "Vertical Spacing" : 1.5,
+
+      "Triggers": [
+        {
+          "regex": "(error:|fatal:)",
+          "action": "HighlightTrigger"
+        }
+      ],
+
+      "Background Color": {
+        "Green Component": "1",
+        "Red Component": "1",
+        "Blue Component": "1"
+      },
+      "Bold Color" : {
+        "Green Component" : "0",
+        "Red Component" : "0",
+        "Blue Component" : "0"
+      },
+      "Cursor Color" : {
+        "Green Component" : "0",
+        "Red Component" : "0",
+        "Blue Component" : "0"
+      },
+      "Foreground Color" : {
+        "Green Component" : "0",
+        "Red Component" : "0",
+        "Blue Component" : "0"
+      },
+
+      "Ansi 0 Color": {
+        "Red Component": "0",
+        "Green Component": "0",
+        "Blue Component": "0"
+      },
+      "Ansi 1 Color": {
+        "Red Component": "0.8",
+        "Green Component": "0",
+        "Blue Component": "0"
+      },
+      "Ansi 2 Color": {
+        "Red Component": "0.3058824",
+        "Green Component": "0.6039215999999999",
+        "Blue Component": "0.02352941"
+      },
+      "Ansi 3 Color": {
+        "Red Component": "0.7686275",
+        "Green Component": "0.627451",
+        "Blue Component": "0"
+      },
+      "Ansi 4 Color": {
+        "Red Component": "0.2039216",
+        "Green Component": "0.3960784",
+        "Blue Component": "0.6431373"
+      },
+      "Ansi 5 Color": {
+        "Red Component": "0.4588235",
+        "Green Component": "0.3137255",
+        "Blue Component": "0.4823529"
+      },
+      "Ansi 6 Color": {
+        "Red Component": "0.02352941",
+        "Green Component": "0.5960785",
+        "Blue Component": "0.6039215999999999"
+      },
+      "Ansi 7 Color": {
+        "Red Component": "0.827451",
+        "Green Component": "0.8431373",
+        "Blue Component": "0.8117647"
+      },
+      "Ansi 8 Color": {
+        "Red Component": "0.3333333",
+        "Green Component": "0.3411765",
+        "Blue Component": "0.3254902"
+      },
+      "Ansi 9 Color": {
+        "Red Component": "0.9372549",
+        "Green Component": "0.1607843",
+        "Blue Component": "0.1607843"
+      },
+      "Ansi 10 Color": {
+        "Red Component": "0.5411764999999999",
+        "Green Component": "0.8862745",
+        "Blue Component": "0.2039216"
+      },
+      "Ansi 11 Color": {
+        "Red Component": "0.9882353",
+        "Green Component": "0.9137255",
+        "Blue Component": "0.3098039"
+      },
+      "Ansi 12 Color": {
+        "Red Component": "0.4470588",
+        "Green Component": "0.6235294",
+        "Blue Component": "0.8117647"
+      },
+      "Ansi 13 Color": {
+        "Red Component": "0.6784314",
+        "Green Component": "0.4980392",
+        "Blue Component": "0.6588235"
+      },
+      "Ansi 14 Color": {
+        "Red Component": "0.2039216",
+        "Green Component": "0.8862745",
+        "Blue Component": "0.8862745"
+      },
+      "Ansi 15 Color": {
+        "Red Component": "0.9333333",
+        "Green Component": "0.9333333",
+        "Blue Component": "0.9254902"
+      },
+    },
+    {
+      "Name": "Hotkey Window",
+      "Guid": "B7966083-D898-4ACF-AF4B-B5587090D410",
+      "Dynamic Profile Parent Name": "Light",
+
+      "Background Color": {
+        "Alpha Component" : "0.5",
+        "Green Component": "0.9",
+        "Red Component": "0.9",
+        "Blue Component": "0.9"
+      },
+      "Blur Radius" : 10,
+      "Blur" : true,
+      "Transparency": 0.15,
+
+      "Has Hotkey" : true,
+      "HotKey Activated By Modifier" : false,
+      "HotKey Alternate Shortcuts" : [],
+      "HotKey Characters Ignoring Modifiers" : " ",
+      "HotKey Characters" : " ",
+      "HotKey Key Code" : 49,
+      "HotKey Modifier Activation" : 0,
+      "HotKey Modifier Flags" : 524288,
+      "HotKey Window Animates" : true,
+      "HotKey Window AutoHides" : true,
+      "HotKey Window Dock Click Action" : 0,
+      "HotKey Window Floats" : false,
+      "HotKey Window Reopens On Activation" : false,
+      "Window Type" : 1,
+    }
+ ]
+}
