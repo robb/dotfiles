@@ -2094,6 +2094,10 @@
 	<true/>
 	<key>TabStyle</key>
 	<integer>3</integer>
+	<key>TerminalMargin</key>
+	<integer>10</integer>
+	<key>TerminalVMargin</key>
+	<integer>5</integer>
 	<key>iTerm Version</key>
 	<string>3.1.beta.4</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
