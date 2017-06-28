@@ -1,3 +1,11 @@
+set -x fish_color_autosuggestion -i blue
+set -x fish_color_command -i
+set -x fish_color_error -i red
+set -x fish_color_match black
+set -x fish_color_operator -i
+set -x fish_color_param -i
+set -x fish_color_valid_path 'F80 --underline'
+
 function fish_prompt
     if test $status -eq 0
         set exit_color normal
@@ -5,7 +13,7 @@ function fish_prompt
         set exit_color red
     end
 
-    set cwd (printf "%s%s%s" (set_color -o black) \
+    set cwd (printf "%s%s%s" (set_color normal | set_color -o) \
                              (pwd | sed -e "s|^$HOME|~|" | rev | cut -d '/' -f '1 2' | rev) \
                              (set_color normal))
 
@@ -17,7 +25,7 @@ function fish_prompt
             set current_branch (git symbolic-ref --quiet --short HEAD | tr -d '[:space:]')
 
             if test -n "$current_branch"
-                set branch_state (printf " at %s%s%s" (set_color -o black) \
+                set branch_state (printf " at %s%s%s" (set_color normal | set_color -o) \
                                                       $current_branch \
                                                       (set_color normal))
             else
@@ -34,12 +42,12 @@ function fish_prompt
             set behind (echo $commits_different_remotely | grep '<' | wc -l | tr -d ' ' ^ /dev/null)
 
             if test $ahead -gt 0 -a $behind -gt 0
-                set ahead_behind_state (printf ", %s↑%s%s, %s↓%s%s" (set_color -o black) $ahead  (set_color normal) \
-                                                                    (set_color -o black) $behind (set_color normal))
+                set ahead_behind_state (printf ", %s↑%s%s, %s↓%s%s" (set_color normal | set_color -o) $ahead  (set_color normal) \
+                                                                    (set_color normal | set_color -o) $behind (set_color normal))
             else if test $ahead -gt 0
-                set ahead_behind_state (printf ", %s↑%s%s" (set_color -o black) $ahead (set_color normal))
+                set ahead_behind_state (printf ", %s↑%s%s" (set_color normal | set_color -o) $ahead (set_color normal))
             else if test $behind -gt 0
-                set ahead_behind_state (printf ", %s↓%s%s" (set_color -o black) $behind (set_color normal))
+                set ahead_behind_state (printf ", %s↓%s%s" (set_color normal | set_color -o) $behind (set_color normal))
             end
 
             set git_prompt "$branch_state""$ahead_behind_state"
