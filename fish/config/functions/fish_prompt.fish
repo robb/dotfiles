@@ -36,10 +36,9 @@ function fish_prompt
 
             # Print how many commits we're ahead or behind upstream
             set remote_ref (git for-each-ref --format='%(upstream:short)' (git symbolic-ref -q HEAD))
-            set commits_different_remotely (git rev-list --left-right $remote_ref...HEAD)
 
-            set ahead  (echo $commits_different_remotely | grep '>' | wc -l | tr -d ' ' ^ /dev/null)
-            set behind (echo $commits_different_remotely | grep '<' | wc -l | tr -d ' ' ^ /dev/null)
+            set ahead  (git rev-list --left-right $remote_ref...HEAD | grep '>' | wc -l | tr -d ' ')
+            set behind (git rev-list --left-right $remote_ref...HEAD | grep '<' | wc -l | tr -d ' ')
 
             if test $ahead -gt 0 -a $behind -gt 0
                 set ahead_behind_state (printf ", %s↑%s%s, %s↓%s%s" (set_color normal | set_color -o) $ahead  (set_color normal) \
