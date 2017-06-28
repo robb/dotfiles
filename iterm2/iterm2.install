@@ -6,4 +6,4 @@ echo "Linking $DOTFILES/iterm2/profiles to ~/Library/Application Support/iTerm2/
 mkdir -p "~/Library/Application Support/iTerm2/"
 rm -rf "~/Library/Application Support/iTerm2/DynamicProfiles"
 
-ln -sF $DOTFILES/iterm2/profiles/ ~/Library/Application\ Support/iTerm2/DynamicProfiles
+ln -sfF $DOTFILES/iterm2/profiles ~/Library/Application\ Support/iTerm2/DynamicProfiles
