@@ -1,5 +1,5 @@
 function fish_prompt
-	if test $status -eq 0
+    if test $status -eq 0
         set exit_color normal
     else
         set exit_color red
