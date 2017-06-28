@@ -64,7 +64,7 @@
 	<key>HiddenAdvancedFontRendering</key>
 	<false/>
 	<key>HideActivityIndicator</key>
-	<false/>
+	<true/>
 	<key>HideMenuBarInFullscreen</key>
 	<true/>
 	<key>HideScrollbar</key>
@@ -1925,6 +1925,8 @@
 	<date>2017-06-28T04:00:33Z</date>
 	<key>Secure Input</key>
 	<true/>
+	<key>ShowPaneTitles</key>
+	<false/>
 	<key>TabStyle</key>
 	<integer>3</integer>
 	<key>TerminalMargin</key>
