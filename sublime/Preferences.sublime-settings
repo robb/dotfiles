@@ -7,7 +7,7 @@
 	"draw_white_space": "all",
 	"enable_telemetry": false,
 	"ensure_newline_at_eof_on_save": true,
-	"font_face": "Source Code Pro Light",
+	"font_face": "SFMono-Light",
 	"font_options":
 	[
 		"subpixel_antialias"
