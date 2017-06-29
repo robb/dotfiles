@@ -12,8 +12,6 @@
 	cl    = clone --recursive
 	st    = status
 	subup = submodule update --recursive --init
-	hub   = !gh
-	search = grep --break --heading --line-number
 
 [color]
 	branch = auto
@@ -27,10 +25,6 @@
 [branch "master"]
 	remote = origin
 	merge  = refs/heads/master
-
-[branch "development"]
-	remote = origin
-	merge  = refs/heads/development
 
 [credential]
 	helper = osxkeychain
@@ -54,5 +48,6 @@
 
 [pull]
 	ff = only
+
 [help]
 	autocorrect = 10
