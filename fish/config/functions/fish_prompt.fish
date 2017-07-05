@@ -38,8 +38,8 @@ function fish_prompt
             set remote_ref (git for-each-ref --format='%(upstream:short)' (git symbolic-ref -q HEAD))
 
             if test -n "$remote_ref"
-                set ahead  (git rev-list --left-right $remote_ref...HEAD | grep '>' | wc -l | tr -d ' ')
-                set behind (git rev-list --left-right $remote_ref...HEAD | grep '<' | wc -l | tr -d ' ')
+                set ahead  (git rev-list --left-right $remote_ref...HEAD ^ /dev/null | grep '>' | wc -l | tr -d ' ')
+                set behind (git rev-list --left-right $remote_ref...HEAD ^ /dev/null | grep '<' | wc -l | tr -d ' ')
 
                 if test $ahead -gt 0 -a $behind -gt 0
                     set ahead_behind_state (printf ", %s↑%s%s, %s↓%s%s" (set_color normal | set_color -o) $ahead  (set_color normal) \
