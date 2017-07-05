@@ -4,8 +4,13 @@ These are my .dotfiles.
 There are many like them, but these ones are mine.
 
 <p align="center">
-   <img src="img/prompt.png" width="656px">
+   <img src="img/light.png" width="663px">
 </p>
+
+<p align="center">
+   <img src="img/dark.png" width="663px">
+</p>
+
 
 ## Install guide
 
