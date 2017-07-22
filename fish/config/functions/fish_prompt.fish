@@ -1,10 +1,11 @@
-set -x fish_color_autosuggestion -i blue
-set -x fish_color_command -i
-set -x fish_color_error -i red
-set -x fish_color_match black
-set -x fish_color_operator -i
-set -x fish_color_param -i
-set -x fish_color_valid_path 'F80 --underline'
+set fish_color_autosuggestion -i blue
+set fish_color_command -i
+set fish_color_error -i red
+set fish_color_match -i black
+set fish_color_operator -i
+set fish_color_param -i
+set fish_color_quote -i -o blue
+set fish_color_valid_path -i F80
 
 function fish_prompt
     if test $status -eq 0
