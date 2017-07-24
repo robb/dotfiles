@@ -1,10 +1,6 @@
 [include]
 	path = .dotfiles/secret/.gitconfig
 
-[user]
-	name  = Robert Böhnke
-	email = robb@robb.is
-
 [core]
 	excludesfile   = ~/.gitignore
 	attributesfile = ~/.gitattributes
