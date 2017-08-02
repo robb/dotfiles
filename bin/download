@@ -1,4 +1,0 @@
-#!/bin/sh
-
-cd ~/Downloads
-axel -n40 -a -o "$2" "$1"
