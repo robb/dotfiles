@@ -19,3 +19,6 @@ end
 function fish_greeting
     echo -ne "\033]1337;SetProfile="$iterm2_profile"\a"
 end
+
+# Initialize RVM
+rvm default
