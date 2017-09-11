@@ -21,4 +21,6 @@ function fish_greeting
 end
 
 # Initialize RVM
-rvm default
+if type -q rvm
+    rvm default
+end

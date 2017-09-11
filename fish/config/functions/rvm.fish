@@ -1,4 +1,8 @@
 function rvm --description='Ruby enVironment Manager'
+  if not test -e ~/.rvm/scripts/rvm
+    return
+  end
+
   # run RVM and capture the resulting environment
   set --local env_file (mktemp -t rvm.fish.XXXXXXXXXX)
   bash -c 'source ~/.rvm/scripts/rvm; rvm "$@"; status=$?; env > "$0"; exit $status' $env_file $argv
