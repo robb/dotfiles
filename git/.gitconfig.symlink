@@ -8,7 +8,7 @@
 	trustctime     = false
 
 [alias]
-	co        = checkout
+	co        = checkout --quiet
 	cl        = clone --recursive
 	st        = status
 	subup     = submodule update --recursive --init
