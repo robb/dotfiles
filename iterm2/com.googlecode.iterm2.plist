@@ -104,15 +104,17 @@
 	<key>LeftOption</key>
 	<integer>2</integer>
 	<key>LoadPrefsFromCustomFolder</key>
-	<true/>
+	<integer>1</integer>
 	<key>MaxVertically</key>
 	<false/>
+	<key>NSAllowsDefaultLineBreakStrategy</key>
+	<true/>
 	<key>NSFontPanelAttributes</key>
 	<string>1, 4</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>/Applications</string>
+	<string>~/.dotfiles/iterm2</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
-	<string>{712, 459}</string>
+	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -121,6 +123,11 @@
 	<false/>
 	<key>NSScrollViewShouldScrollUnderTitlebar</key>
 	<false/>
+	<key>NSSplitView Subview Frames NSColorPanelSplitView</key>
+	<array>
+		<string>0.000000, 0.000000, 224.000000, 263.000000, NO, NO</string>
+		<string>0.000000, 264.000000, 224.000000, 43.000000, NO, NO</string>
+	</array>
 	<key>NSTableView Columns v2 KeyBingingTable</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGNjdYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
@@ -128,7 +135,7 @@
 	gAKACoAN0xAJChEVGVdOUy5rZXlzoxITFIADgASABaMWFxiABoAHgAiACVpJZGVudGlm
 	aWVyVVdpZHRoVkhpZGRlblEwI0BowAAAAAAACNIhIiMkWiRjbGFzc25hbWVYJGNsYXNz
 	ZXNcTlNEaWN0aW9uYXJ5oiMlWE5TT2JqZWN00xAJCicrGaMSExSAA4AEgAWjLC0YgAuA
-	DIAIgAlRMSNAczAAAAAAANIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
+	DIAIgAlRMSNAdKGdsi0OVtIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
 	TlNLZXllZEFyY2hpdmVy0Tg5VUFycmF5gAEACAARABoAIwAtADIANwBGAEwAUQBcAGMA
 	ZgBoAGoAbABzAHsAfwCBAIMAhQCJAIsAjQCPAJEAnACiAKkAqwC0ALUAugDFAM4A2wDe
 	AOcA7gDyAPQA9gD4APwA/gEAAQIBBAEGAQ8BFAEjAScBLwFBAUQBSgAAAAAAAAIBAAAA
@@ -150,21 +157,19 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>1119 128 445 291 0 0 1680 1050 </string>
-	<key>NSWindow Frame Preferences</key>
-	<string>49 416 606 456 0 0 1440 877 </string>
+	<string>1629 110 865 503 0 0 2560 1440 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>518 561 400 129 0 0 1440 877 </string>
+	<string>1058 983 400 129 0 0 2560 1440 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>528 477 620 392 0 0 1680 1028 </string>
+	<string>948 786 620 392 0 0 2560 1440 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>269 126 606 469 0 0 2560 1440 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>434 388 918 416 0 0 1680 1028 </string>
+	<string>865 355 796 473 0 0 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1680 1050 0 0 1680 1028 </string>
+	<string>-1005 -145 992 1434 -2560 -135 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>539 272 580 457 0 0 1680 1028 </string>
-	<key>NSWindow Frame iTerm Window 2</key>
-	<string>275 19 740 682 0 0 1680 1028 </string>
+	<string>1354 540 580 457 0 0 2560 1440 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1022,6 +1027,20 @@
 					<key>Text</key>
 					<string>0x1b 0x7f</string>
 				</dict>
+				<key>0xf702-0x300000</key>
+				<dict>
+					<key>Action</key>
+					<integer>11</integer>
+					<key>Text</key>
+					<string>0x01</string>
+				</dict>
+				<key>0xf703-0x300000</key>
+				<dict>
+					<key>Action</key>
+					<integer>11</integer>
+					<key>Text</key>
+					<string>0x05</string>
+				</dict>
 			</dict>
 			<key>Mouse Reporting</key>
 			<true/>
@@ -1400,6 +1419,20 @@
 					<integer>11</integer>
 					<key>Text</key>
 					<string>0x1b 0x7f</string>
+				</dict>
+				<key>0xf702-0x300000</key>
+				<dict>
+					<key>Action</key>
+					<integer>11</integer>
+					<key>Text</key>
+					<string>0x01</string>
+				</dict>
+				<key>0xf703-0x300000</key>
+				<dict>
+					<key>Action</key>
+					<integer>11</integer>
+					<key>Text</key>
+					<string>0x05</string>
 				</dict>
 			</dict>
 			<key>Mouse Reporting</key>
@@ -1848,34 +1881,22 @@
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
-	<key>NoSyncConfirmBeta</key>
-	<true/>
-	<key>NoSyncHaveShownPromoWithId_4</key>
-	<true/>
 	<key>NoSyncHaveWarnedAboutIncompatibleSoftware</key>
 	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>710D7C11-B2F6-48AB-9831-FDD6E916B7E6</string>
-	<key>NoSyncLastTipTime</key>
-	<real>456918237.23140597</real>
-	<key>NoSyncNeverRemindPrefsChangesLost</key>
-	<true/>
+	<string>C8351AFF-3E6A-41B3-8A45-B8F3B9396382</string>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
-	<key>NoSyncSuppressAnnyoingBellOffer</key>
-	<true/>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>465926362.78843999</real>
-	<key>NoSyncTimeOfLastPromo</key>
-	<real>477570108.04862797</real>
-	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>477745406.09649801</real>
-	<key>NoSyncTipsDisabled</key>
-	<true/>
+	<real>497222902.063761</real>
+	<key>OnlyWhenMoreTabs</key>
+	<false/>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -1911,6 +1932,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/robb/.dotfiles/iterm2</string>
+	<key>PromptOnQuit</key>
+	<false/>
 	<key>SUAutomaticallyUpdate</key>
 	<true/>
 	<key>SUEnableAutomaticChecks</key>
@@ -1918,11 +1941,13 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/testing.xml?shard=38</string>
+	<string>https://iterm2.com/appcasts/testing.xml?shard=84</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-07-25T16:03:45Z</date>
+	<date>2017-09-19T21:59:08Z</date>
+	<key>SUSendProfileInfo</key>
+	<false/>
 	<key>Secure Input</key>
 	<true/>
 	<key>ShowPaneTitles</key>
@@ -1933,8 +1958,10 @@
 	<integer>10</integer>
 	<key>TerminalVMargin</key>
 	<integer>5</integer>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.1.beta.5</string>
+	<string>3.1.beta.8</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
