@@ -6,6 +6,10 @@
 	attributesfile = ~/.gitattributes
 	editor         = /usr/bin/vim
 	trustctime     = false
+	whitespace = trailing-space,space-before-tab
+
+[advice]
+	statusHints = false
 
 [alias]
 	g         = !exec git
@@ -22,6 +26,22 @@
 	status = auto
 	ui     = true
 
+[color "branch"]
+	current = green bold
+	local   = green
+	remote  = red italic
+
+[color "diff"]
+	frag = magenta bold
+	meta = yellow bold
+	new  = green bold
+	old  = red italic
+
+[color "status"]
+	added     = yellow
+	changed   = green bold
+	untracked = cyan
+
 [push]
 	default = current
 
@@ -37,6 +57,7 @@
 
 [diff]
 	algorithm = patience
+	renames   = copies
 
 [diff "image"]
 	textconv = sh ~/.dotfiles/git/difftools/image.sh
@@ -54,3 +75,7 @@
 
 [help]
 	autocorrect = 10
+
+[status]
+	showUntrackedFiles = all
+	submoduleSummary = true
