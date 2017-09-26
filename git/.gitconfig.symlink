@@ -8,9 +8,11 @@
 	trustctime     = false
 
 [alias]
-	co        = checkout --quiet
+	g         = !exec git
 	cl        = clone --recursive
+	co        = checkout --quiet
 	st        = status
+	git       = !exec git
 	subup     = submodule update --recursive --init
 	multipull = !find . -name .git -type d -depth 2 -exec git -C "$PWD/{}/.." pull --ff-only "\\;"
 
