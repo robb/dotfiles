@@ -1,13 +1,3 @@
-[include]
-	path = .dotfiles/secret/.gitconfig
-
-[core]
-	excludesfile   = ~/.gitignore
-	attributesfile = ~/.gitattributes
-	editor         = /usr/bin/vim
-	trustctime     = false
-	whitespace = trailing-space,space-before-tab
-
 [advice]
 	statusHints = false
 
@@ -20,6 +10,10 @@
 	subup     = submodule update --recursive --init
 	multipull = !find . -name .git -type d -depth 2 -exec git -C "$PWD/{}/.." pull --ff-only "\\;"
 
+[branch "master"]
+	remote = origin
+	merge  = refs/heads/master
+
 [color]
 	branch = auto
 	diff   = auto
@@ -28,8 +22,9 @@
 
 [color "branch"]
 	current = green bold
-	local   = green
+	local   = normal
 	remote  = red italic
+	upsteam = yellow
 
 [color "diff"]
 	frag = magenta bold
@@ -40,42 +35,60 @@
 [color "status"]
 	added     = yellow
 	changed   = green bold
-	untracked = cyan
+	unmerged  = red
+	untracked = blue
 
-[push]
-	default = current
+[column]
+	status = auto,row,nodense
+	ui     = auto,row,nodense
 
-[branch "master"]
-	remote = origin
-	merge  = refs/heads/master
+[core]
+	excludesfile   = ~/.gitignore
+	attributesfile = ~/.gitattributes
+	editor         = /usr/bin/vim
+	trustctime     = false
+	whitespace     = trailing-space,space-before-tab
 
 [credential]
 	helper = osxkeychain
 
-[rerere]
-	enabled = true
-
 [diff]
-	algorithm = patience
+	algorithm = histogram
 	renames   = copies
 
 [diff "image"]
 	textconv = sh ~/.dotfiles/git/difftools/image.sh
 
-[grep]
-	extendRegexp = true
-	lineNumber = true
-
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
 
-[pull]
-	ff = only
+[grep]
+	extendRegexp = true
+	lineNumber = true
 
 [help]
 	autocorrect = 10
 
+[include]
+	path = .dotfiles/secret/.gitconfig
+
+[log]
+	abbrevCommit = true
+	decorate     = auto
+
+[pull]
+	ff = only
+
+[push]
+	default = current
+
+[rerere]
+	enabled = true
+
 [status]
 	showUntrackedFiles = all
-	submoduleSummary = true
+	submoduleSummary   = true
+
+[user]
+	useConfigOnly = true
