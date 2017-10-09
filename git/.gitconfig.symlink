@@ -33,8 +33,8 @@
 	old  = red italic
 
 [color "status"]
-	added     = yellow
-	changed   = green bold
+	added     = green
+	changed   = red bold
 	unmerged  = red
 	untracked = blue
 
