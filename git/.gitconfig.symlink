@@ -27,10 +27,11 @@
 	upsteam = yellow
 
 [color "diff"]
-	frag = magenta bold
-	meta = yellow bold
-	new  = green bold
-	old  = red italic
+	frag       = magenta bold
+	meta       = yellow bold
+	new        = green bold
+	old        = red italic
+	whitespace = red reverse
 
 [color "status"]
 	added     = green
@@ -53,8 +54,9 @@
 	helper = osxkeychain
 
 [diff]
-	algorithm = histogram
-	renames   = copies
+	algorithm        = histogram
+	renames          = copies
+	wsErrorHighlight = all
 
 [diff "image"]
 	textconv = sh ~/.dotfiles/git/difftools/image.sh
