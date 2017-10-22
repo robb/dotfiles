@@ -1932,8 +1932,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/robb/.dotfiles/iterm2</string>
-	<key>PromptOnQuit</key>
-	<false/>
+	<key>QuitWhenAllWindowsClosed</key>
+	<true/>
 	<key>SUAutomaticallyUpdate</key>
 	<true/>
 	<key>SUEnableAutomaticChecks</key>
