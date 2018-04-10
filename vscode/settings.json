@@ -1,0 +1,20 @@
+{
+    "[typescript]": {
+        "editor.formatOnSave": true
+    },
+    "editor.formatOnPaste": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.renderWhitespace": "all",
+    "editor.rulers": [
+        80
+    ],
+    "editor.snippetSuggestions": "top",
+    "sublimeTextKeymap.promptV3Features": true,
+    "editor.trimAutoWhitespace": true,
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "window.zoomLevel": 0,
+    "workbench.colorTheme": "Atom One Dark",
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.statusBar.feedback.visible": false
+}
