@@ -1,8 +1,0 @@
-#!/usr/local/bin/fish
-
-# Link Sublime settings
-mkdir -p ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
-
-for settings in ~/.dotfiles/**.sublime-settings
-    ln -sf $settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/(basename $settings)
-end
