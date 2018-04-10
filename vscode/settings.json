@@ -1,20 +1,31 @@
 {
-    "[typescript]": {
-        "editor.formatOnSave": true
+    "[markdown]": {
+        "files.trimTrailingWhitespace": false
     },
+    "editor.fontFamily": "'SF Mono Light', Menlo, Monaco, 'Courier New', monospace",
     "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.minimap.enabled": false,
     "editor.multiCursorModifier": "ctrlCmd",
+    "editor.renderControlCharacters": true,
     "editor.renderWhitespace": "all",
     "editor.rulers": [
         80
     ],
+    "editor.showFoldingControls": "always",
     "editor.snippetSuggestions": "top",
-    "sublimeTextKeymap.promptV3Features": true,
     "editor.trimAutoWhitespace": true,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "sublimeTextKeymap.promptV3Features": true,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
+    "tslint.autoFixOnSave": true,
     "window.zoomLevel": 0,
-    "workbench.colorTheme": "Atom One Dark",
+    "workbench.colorTheme": "Solarized Dark",
+    "workbench.iconTheme": "vs-minimal",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.statusBar.feedback.visible": false
 }
