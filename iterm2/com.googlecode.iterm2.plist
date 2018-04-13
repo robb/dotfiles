@@ -2020,7 +2020,7 @@
 	<key>PrefsCustomFolder</key>
 	<string>/Users/robb/.dotfiles/iterm2</string>
 	<key>QuitWhenAllWindowsClosed</key>
-	<true/>
+	<false/>
 	<key>SUAutomaticallyUpdate</key>
 	<true/>
 	<key>SUEnableAutomaticChecks</key>
