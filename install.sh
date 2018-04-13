@@ -47,6 +47,4 @@ done
 
 set -e
 
-export DOTFILES=$PWD
-
 find . -name "*.install" | while read installer ; do sh -c "${installer}" ; done
