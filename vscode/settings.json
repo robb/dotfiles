@@ -18,6 +18,14 @@
     "editor.trimAutoWhitespace": true,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
+    "files.exclude": {
+        "**/.DS_Store": true,
+        "**/.git": true,
+        "**/.hg": true,
+        "**/.svn": true,
+        "**/.swp": true,
+        "**/CVS": true
+    },
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
     "sublimeTextKeymap.promptV3Features": true,
