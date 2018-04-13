@@ -1,5 +1,4 @@
 #!/bin/sh
-set
 
 echo "Linking $DOTFILES/fish/config to ~/.config/fish"
 
