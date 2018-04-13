@@ -48,7 +48,7 @@ defaults write NSGlobalDomain com.apple.sound.beep.feedback -float 0
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 0
+defaults write NSGlobalDomain KeyRepeat -int 2
 
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
@@ -97,8 +97,18 @@ chflags nohidden ~/Library
 
 ## Menu Bar
 
-# Only show Battery, WiFi menu and clock
-defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/Battery.menu" "/System/Library/CoreServices/Menu Extras/AirPort.menu" "/System/Library/CoreServices/Menu Extras/Clock.menu"
+# Hide Siri
+defaults write com.apple.siri "StatusMenuVisible" 0
+defaults write com.apple.systemuiserver "NSStatusItem Visible Siri" 0
+
+# Enable favorite menu extras
+defaults write com.apple.systemuiserver "menuExtras" -array \
+        "/System/Library/CoreServices/Menu Extras/Clock.menu" \
+        "/System/Library/CoreServices/Menu Extras/Battery.menu" \
+        "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
+        "/System/Library/CoreServices/Menu Extras/Displays.menu" \
+        "/System/Library/CoreServices/Menu Extras/Volume.menu"
+
 
 # Use analog clock
 defaults write com.apple.menuextra.clock IsAnalog -bool true
@@ -147,7 +157,7 @@ defaults write com.apple.dock show-process-indicators -bool true
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
 
-# Set edge-dragging delay to 0.7
+# Set edge-dragging delay to 1.0
 defaults write com.apple.dock workspaces-edge-delay -float 1.0
 
 
