@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Sort Selection
+cp -R ~/.dotfiles/services/Sort\ Selection.workflow ~/Library/Services/
+defaults write -g NSUserKeyEquivalents -dict-add "Sort Selection" "@^s"
