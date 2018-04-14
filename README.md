@@ -11,7 +11,6 @@ There are many like them, but these ones are mine.
    <img src="img/dark.png" width="663px">
 </p>
 
-
 ## Install guide
 
 1. Clone it into `~`
