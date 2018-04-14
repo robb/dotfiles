@@ -3,5 +3,10 @@
         "key": "ctrl+cmd+s",
         "command": "editor.action.sortLinesAscending",
         "when": "editorHasSelection"
+    },
+    {
+        "key": "cmd+K",
+        "command": "workbench.action.terminal.clear",
+        "when": "terminalFocus"
     }
 ]
