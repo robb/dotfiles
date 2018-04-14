@@ -18,6 +18,9 @@
     "editor.trimAutoWhitespace": true,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
+    "files.associations": {
+        "*.podspec": "ruby"
+    },
     "files.exclude": {
         "**/.DS_Store": true,
         "**/.git": true,
