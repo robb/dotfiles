@@ -2,20 +2,20 @@
 	statusHints = false
 
 [alias]
-	g         = !exec git
 	cl        = clone --recursive
 	co        = checkout --quiet
-	st        = status
+	g         = !exec git
 	git       = !exec git
-	subup     = submodule update --recursive --init
 	multipull = !find . -name .git -type d -depth 2 -exec git -C "$PWD/{}/.." pull --ff-only "\\;"
+	st        = status
+	subup     = submodule update --recursive --init
 
 [branch]
 	autosetupmerge = true
 
 [branch "master"]
-	remote = origin
 	merge  = refs/heads/master
+	remote = origin
 
 [color]
 	branch = auto
@@ -47,9 +47,9 @@
 	ui     = auto,row,nodense
 
 [core]
-	excludesfile   = ~/.gitignore
 	attributesfile = ~/.gitattributes
 	editor         = /usr/bin/vim
+	excludesfile   = ~/.gitignore
 	trustctime     = false
 	whitespace     = trailing-space,space-before-tab
 
@@ -65,12 +65,12 @@
 	textconv = sh ~/.dotfiles/git/difftools/image.sh
 
 [filter "media"]
-	clean = git-media-clean %f
+	clean  = git-media-clean %f
 	smudge = git-media-smudge %f
 
 [grep]
 	extendRegexp = true
-	lineNumber = true
+	lineNumber   = true
 
 [help]
 	autocorrect = 10
