@@ -2,8 +2,11 @@
     "[markdown]": {
         "files.trimTrailingWhitespace": false
     },
-    "editor.fontFamily": "'SF Mono', Menlo, Monaco, 'Courier New', monospace",
+    "editor.cursorStyle": "line-thin",
+    "editor.fontFamily": "'SF Mono', Monaco, 'Courier New', monospace",
     "editor.fontLigatures": true,
+    "editor.fontSize": 13,
+    "editor.lineHeight": 24,
     "editor.fontWeight": "300",
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
