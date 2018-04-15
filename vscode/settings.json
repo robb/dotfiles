@@ -3,6 +3,7 @@
         "files.trimTrailingWhitespace": false
     },
     "editor.fontFamily": "'SF Mono', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
     "editor.fontWeight": "300",
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
