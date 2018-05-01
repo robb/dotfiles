@@ -14,4 +14,4 @@ There are many like them, but these ones are mine.
 ## Install guide
 
 1. Clone it into `~`
-2. Run `install.sh`
+2. Run `make`

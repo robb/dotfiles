@@ -1,5 +1,5 @@
 #!/bin/sh
 
-echo "Installing SF Mono"
+echo "- Installing SF Mono"
 
 cp -R /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/. ~/Library/Fonts/

@@ -1,5 +1,7 @@
 #!/usr/local/bin/fish
 
+echo "- Linking VS Code Settings"
+
 # Link VS Code settings
 mkdir -p ~/Library/Application\ Support/Code/User/
 

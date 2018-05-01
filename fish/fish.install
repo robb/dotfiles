@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "Linking ~/.dotfiles/fish/config to ~/.config/fish"
+echo "- Linking ~/.config/fish"
 
 mkdir -p ~/.config
 rm -rf ~/.config/fish

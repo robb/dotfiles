@@ -2,6 +2,8 @@
 #
 # Safari specific settings
 
+echo "- Setting up Safari"
+
 # Hide Safari's bookmark bar.
 defaults write com.apple.Safari ShowFavoritesBar -bool false
 

@@ -2,6 +2,8 @@
 #
 # Xcode specific settings
 
+echo "- Setting up Xcode"
+
 # Trim trailing whitespace
 defaults write com.apple.dt.Xcode DVTTextEditorTrimTrailingWhitespace -bool true
 

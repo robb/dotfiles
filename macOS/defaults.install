@@ -2,6 +2,8 @@
 #
 # OS X Specific settings
 
+echo "- Setting up macOS"
+
 ## OS X Settings
 
 # Disable Resume system-wide

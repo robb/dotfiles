@@ -2,6 +2,8 @@
 #
 # Keynote specific settings
 
+echo "- Setting up Keynote"
+
 # Disable smart quotes
 defaults write com.apple.iWork.Keynote TSWPAutomaticQuoteSubstitution 0
 
