@@ -7,9 +7,11 @@ LINK = $(patsubst %.symlink, ~/%, $(notdir $(wildcard **/*.symlink) $(wildcard *
 RUN  = $(wildcard **/*.install)
 
 ~/%: **/%.symlink
+	@echo "- Linking $<"
 	@ln -sF $(CURDIR)/$< $@
 
 delete:
+	@echo "- Removing linked files"
 	@rm -f $(LINK)
 
 link: $(LINK)
