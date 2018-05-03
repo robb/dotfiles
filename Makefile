@@ -3,16 +3,16 @@ all: link run
 
 SHELL := /bin/bash
 
-RUN  = $(wildcard **/*.install)
 LINK = $(patsubst %.symlink, ~/%, $(notdir $(wildcard **/*.symlink) $(wildcard **/.*.symlink)))
+RUN  = $(wildcard **/*.install)
 
-run: $(RUN)
-	@echo $^ | xargs -n 1 $(SHELL)
-
-link: $(LINK)
+~/%: **/%.symlink
+	@ln -sF $(CURDIR)/$< $@
 
 delete:
 	@rm -f $(LINK)
 
-~/%: **/%.symlink
-	@ln -sF $(CURDIR)/$< $@
+link: $(LINK)
+
+run: $(RUN)
+	@echo $^ | xargs -n 1 $(SHELL)
