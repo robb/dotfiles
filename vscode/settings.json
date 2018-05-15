@@ -23,6 +23,7 @@
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "files.associations": {
+        "*.ldjson": "json",
         "*.podspec": "ruby"
     },
     "files.exclude": {
