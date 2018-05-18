@@ -1,6 +1,6 @@
 # !/bin/sh
 
-echo "- Setting up system-wide shortcuts"
+echo "- Setting up System-wide Shortcuts"
 
 # Map ⇧⌘R to rename the current document.
 defaults write -g NSUserKeyEquivalents -dict-add "Rename..." "@\$r"
