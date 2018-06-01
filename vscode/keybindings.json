@@ -5,6 +5,11 @@
         "when": "editorHasSelection"
     },
     {
+        "key": "ctrl+cmd+e",
+        "command": "editor.action.changeAll",
+        "when": "editorFocus"
+    },
+    {
         "key": "cmd+K",
         "command": "workbench.action.terminal.clear",
         "when": "terminalFocus"
