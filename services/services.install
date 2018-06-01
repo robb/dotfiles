@@ -8,4 +8,4 @@ defaults write -g NSUserKeyEquivalents -dict-add "Sort Selection" "@^s"
 
 # Edit in VS Code
 cp -R ~/.dotfiles/services/Edit\ in\ VS\ Code.workflow ~/Library/Services/
-defaults write -g NSUserKeyEquivalents -dict-add "Edit in VS Code" "@^e"
+defaults write -g NSUserKeyEquivalents -dict-add "Edit in VS Code" "@^v"
