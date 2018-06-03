@@ -22,6 +22,11 @@ if test -d /usr/local/sbin
     set PATH "/usr/local/sbin" $PATH
 end
 
+# Rust
+if test -d ~/.cargo/bin
+    set PATH "$HOME/.cargo/bin" $PATH
+end
+
 # Initialize RVM
 if type -q rvm
     rvm default
