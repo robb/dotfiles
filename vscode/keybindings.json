@@ -6,8 +6,8 @@
     },
     {
         "key": "ctrl+cmd+e",
-        "command": "editor.action.changeAll",
-        "when": "editorFocus"
+        "command": "editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
     },
     {
         "key": "cmd+K",
