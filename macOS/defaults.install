@@ -107,9 +107,9 @@ defaults write com.apple.systemuiserver "NSStatusItem Visible Siri" 0
 defaults write com.apple.systemuiserver "menuExtras" -array \
         "/System/Library/CoreServices/Menu Extras/Clock.menu" \
         "/System/Library/CoreServices/Menu Extras/Battery.menu" \
+        "/System/Library/CoreServices/Menu Extras/Volume.menu" \
         "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
-        "/System/Library/CoreServices/Menu Extras/Displays.menu" \
-        "/System/Library/CoreServices/Menu Extras/Volume.menu"
+        "/System/Library/CoreServices/Menu Extras/Bluetooth.menu"
 
 
 # Use analog clock
