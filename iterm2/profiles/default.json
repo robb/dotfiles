@@ -218,6 +218,8 @@
       "Guid": "B7966083-D898-4ACF-AF4B-B5587090D410",
       "Dynamic Profile Parent Name": "Light",
 
+      "Space": -1,
+      "Screen": 0,
       "Has Hotkey" : true,
       "HotKey Activated By Modifier" : false,
       "HotKey Alternate Shortcuts" : [],
