@@ -160,11 +160,11 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>528 477 620 392 0 0 1680 1028 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>269 76 618 519 0 0 1680 1028 </string>
+	<string>269 76 606 469 0 0 1680 1028 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>275 213 928 394 0 0 1680 1028 </string>
+	<string>275 247 796 486 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1680 1050 0 0 1680 1028 </string>
+	<string>0 566 580 457 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>111 25 740 682 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -2036,7 +2036,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-05-12T12:50:34Z</date>
+	<date>2018-06-10T17:43:54Z</date>
 	<key>Secure Input</key>
 	<true/>
 	<key>ShowPaneTitles</key>
@@ -2050,7 +2050,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.1.6beta5</string>
+	<string>3.2.0beta3</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
