@@ -8,7 +8,7 @@ RUN  = $(wildcard **/*.install)
 
 ~/%: **/%.symlink
 	@echo "- Linking $<"
-	@ln -sF $(CURDIR)/$< $@
+	@ln -sF "$(CURDIR)/$<" "$@"
 
 delete:
 	@echo "- Removing linked files"
