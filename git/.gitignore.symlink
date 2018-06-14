@@ -25,3 +25,6 @@ node_modules/
 build/
 DerivedData
 xcuserdata
+
+# Xcode Playgrounds
+*.xctimeline
