@@ -1,10 +1,10 @@
 #!/bin/sh
 #
-# OS X Specific settings
+# macOS Specific settings
 
 echo "- Setting up macOS"
 
-## OS X Settings
+## macOS Settings
 
 # Disable Resume system-wide
 defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
@@ -12,7 +12,7 @@ defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
 # Enable automatic termination of inactive apps
 defaults write NSGlobalDomain NSDisableAutomaticTermination -bool false
 
-# Use AirDrop over every interface. srsly this should be a default.
+# Use AirDrop over every interface.
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 
 ## Appearance & Animations
