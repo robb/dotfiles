@@ -160,6 +160,15 @@ defaults write com.apple.dock mru-spaces -bool false
 defaults write com.apple.dock workspaces-edge-delay -float 1.0
 
 
+### Mojave
+
+# Enable Dark Mode
+
+if [ $(sw_vers -productVersion) == 10.14 ]; then
+        echo "- Enabling Dark Mode"
+        osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to true'
+fi
+
 ### Screen Shots
 
 # Move screen shots to ~/Screen Shots
