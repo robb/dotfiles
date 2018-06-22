@@ -8,7 +8,7 @@ defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -int 1
 
 echo "- Linking iTerm Profiles directory"
 
-mkdir -p "~/Library/Application Support/iTerm2/"
-rm -rf "~/Library/Application Support/iTerm2/DynamicProfiles"
+mkdir -p "$HOME/Library/Application Support/iTerm2/"
+rm -rf "$HOME/Library/Application Support/iTerm2/DynamicProfiles"
 
-ln -sfhF ~/.dotfiles/iterm2/profiles ~/Library/Application\ Support/iTerm2/DynamicProfiles
+ln -sfhF "$HOME/.dotfiles/iterm2/profiles" "$HOME/Library/Application Support/iTerm2/DynamicProfiles"
