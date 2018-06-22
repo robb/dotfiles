@@ -115,6 +115,8 @@ defaults write com.apple.systemuiserver "menuExtras" -array \
 # Use analog clock
 defaults write com.apple.menuextra.clock IsAnalog -bool true
 
+# Hide Spotlight Icon
+defaults write com.apple.Spotlight "NSStatusItem Visible Item-0" 0
 
 ## Dock
 
