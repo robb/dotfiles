@@ -115,6 +115,9 @@ defaults write com.apple.systemuiserver "menuExtras" -array \
 # Use analog clock
 defaults write com.apple.menuextra.clock IsAnalog -bool true
 
+# Don't show battery percentage
+defaults write com.apple.menuextra.battery "ShowPercent" 0
+
 # Hide Spotlight Icon
 defaults write com.apple.Spotlight "NSStatusItem Visible Item-0" 0
 
