@@ -160,6 +160,9 @@ defaults write com.apple.dock no-bouncing -bool true
 # Disable the indicator lights for currently running apps
 defaults write com.apple.dock show-process-indicators -bool true
 
+# Remove all permanent apps from the dock
+defaults write com.apple.dock persistent-apps -array
+
 ### Spaces
 
 # Don’t automatically rearrange Spaces based on most recent use
