@@ -66,6 +66,9 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 # Set mouse tracking speed to reasonably fast
 defaults write NSGlobalDomain com.apple.mouse.scaling -float 2
 
+# Tap to click
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking 1
+defaults write com.apple.AppleMultitouchTrackpad Clicking 1
 
 ## Finder
 
