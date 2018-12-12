@@ -22,6 +22,7 @@
     "editor.trimAutoWhitespace": true,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
+    "extensions.ignoreRecommendations": true,
     "files.associations": {
         "*.ldjson": "json",
         "*.podspec": "ruby"
