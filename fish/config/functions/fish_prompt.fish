@@ -62,7 +62,7 @@ function fish_prompt
             git diff-index --quiet --cached HEAD ^ /dev/null
             set -l staged $status
 
-            git diff-files --quiet ^ /dev/null
+            git diff-files --name-only | git diff --quiet ^ /dev/null
             set -l changed $status
 
             test -z (git ls-files --exclude-standard --others) ^ /dev/null
