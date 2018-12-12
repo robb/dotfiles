@@ -49,8 +49,7 @@
     "window.titleBarStyle": "native",
     "window.zoomLevel": 0,
     "workbench.activityBar.visible": false,
-    "workbench.colorTheme": "One Monokai Italic",
-    "workbench.iconTheme": "vs-minimal",
+    "workbench.colorTheme": "Nord",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.statusBar.feedback.visible": false
 }
