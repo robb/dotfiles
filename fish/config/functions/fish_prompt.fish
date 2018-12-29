@@ -31,7 +31,7 @@ function fish_prompt
                                                       (set_color normal))
             else
                 set branch_state (printf " at %s%s%s" (set_color -o red) \
-                                                      (git rev-parse --short HEAD ^ /dev/null) \
+                                                      (git rev-parse --short HEAD 2> /dev/null) \
                                                       (set_color normal))
             end
 
@@ -39,8 +39,8 @@ function fish_prompt
             set remote_ref (git for-each-ref --format='%(upstream:short)' (git symbolic-ref -q HEAD))
 
             if test -n "$remote_ref"
-                set ahead  (git rev-list --left-right $remote_ref...HEAD ^ /dev/null | grep '>' | wc -l | tr -d ' ')
-                set behind (git rev-list --left-right $remote_ref...HEAD ^ /dev/null | grep '<' | wc -l | tr -d ' ')
+                set ahead  (git rev-list --left-right $remote_ref...HEAD 2> /dev/null | grep '>' | wc -l | tr -d ' ')
+                set behind (git rev-list --left-right $remote_ref...HEAD 2> /dev/null | grep '<' | wc -l | tr -d ' ')
 
                 if test $ahead -gt 0 -a $behind -gt 0
                     set ahead_behind_state (printf ", %s↑%s%s, %s↓%s%s" (set_color normal | set_color -o) $ahead  (set_color normal) \
@@ -59,13 +59,13 @@ function fish_prompt
 
         # Separator
         begin
-            git diff-index --quiet --cached HEAD ^ /dev/null
+            git diff-index --quiet --cached HEAD 2> /dev/null
             set -l staged $status
 
-            git diff-files --name-only | git diff --quiet ^ /dev/null
+            git diff-files --name-only | git diff --quiet 2> /dev/null
             set -l changed $status
 
-            test -z (git ls-files --exclude-standard --others) ^ /dev/null
+            test -z (git ls-files --exclude-standard --others) 2> /dev/null
             set -l untracked $status
 
             if test $staged = 1
