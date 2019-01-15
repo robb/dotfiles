@@ -40,7 +40,6 @@
     "sublimeTextKeymap.promptV3Features": true,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
-    "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.fontFamily": "'SF Mono', Menlo, Monaco, 'Courier New', monospace",
     "terminal.integrated.fontWeight": "300",
