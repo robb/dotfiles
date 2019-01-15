@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+# iTunes specific settings
+
+echo "- Setting up iTunes"
+
+# Don't launch iTunes when connecting an iPhone
+defaults write com.apple.iTunesHelper ignore-devices 1
