@@ -9,6 +9,9 @@ set -x LANG "en_US.UTF-8"
 function fish_greeting
 end
 
+function fish_title
+end
+
 # Homebrew
 if test -d /usr/local/sbin
     set PATH "/usr/local/sbin" $PATH
