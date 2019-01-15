@@ -47,6 +47,9 @@ endif
 " Treat Podfiles like ruby
 au BufRead,BufNewFile Podfile set filetype=ruby
 
+" Automatically wrap git commits at 72 characters
+au FileType gitcommit set tw=72
+
 " Color invisible characters
 "
 " NonText    affects eol, extends and precedes
