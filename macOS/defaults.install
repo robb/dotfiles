@@ -115,12 +115,14 @@ defaults write com.apple.systemuiserver "menuExtras" -array \
         "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
         "/System/Library/CoreServices/Menu Extras/Bluetooth.menu"
 
-
 # Use analog clock
 defaults write com.apple.menuextra.clock IsAnalog -bool true
 
+# Show all processess under energy consumption
+defaults write com.apple.menuextra.battery "ShowAllTopProcesses" -bool true
+
 # Don't show battery percentage
-defaults write com.apple.menuextra.battery "ShowPercent" 0
+defaults write com.apple.menuextra.battery "ShowPercent" -bool false
 
 # Hide Spotlight Icon
 defaults write com.apple.Spotlight "NSStatusItem Visible Item-0" 0
