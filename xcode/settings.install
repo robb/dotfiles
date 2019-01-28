@@ -25,3 +25,6 @@ defaults write com.apple.dt.Xcode ShowDVTDebugMenu -bool true
 
 # Map ⌃⌘L to show last change for the current line
 defaults write com.apple.dt.Xcode NSUserKeyEquivalents -dict-add "Show Last Change For Line" "@^l"
+
+# Map ⇧⌘L to adding cursors to line ends
+defaults write com.apple.dt.Xcode NSUserKeyEquivalents -dict-add "Split Selection By Lines" "@\$l"
