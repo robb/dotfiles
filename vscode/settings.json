@@ -75,4 +75,5 @@
     "workbench.colorTheme": "Visual Studio Dark",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.statusBar.feedback.visible": false,
+    "workbench.statusBar.visible": false
 }
