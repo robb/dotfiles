@@ -72,7 +72,7 @@
         "terminal.background": "#171717",
         "terminal.foreground": "#FFFFFF"
     },
-    "workbench.colorTheme": "Nord",
+    "workbench.colorTheme": "Visual Studio Dark",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.statusBar.feedback.visible": false,
 }
