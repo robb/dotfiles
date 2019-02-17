@@ -28,3 +28,6 @@ defaults write com.apple.dt.Xcode NSUserKeyEquivalents -dict-add "Show Last Chan
 
 # Map ⇧⌘L to adding cursors to line ends
 defaults write com.apple.dt.Xcode NSUserKeyEquivalents -dict-add "Split Selection By Lines" "@\$l"
+
+# Ignore whitespace changes for blame
+defaults write com.apple.dt.Xcode DVTDiffSessionIgnoreWhitespaceKey -bool true
