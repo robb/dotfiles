@@ -1,0 +1,8 @@
+# Make `po` assume Objective-C for memory addresses.
+command regex po
+	s/(.*0x[[:xdigit:]]{10,}.*)/expression -l objc -O -- %1/
+	s/(.*)/expression -O -- %1/
+
+# Use `objc` and `swift` to switch expression languages.
+alias objc settings set target.language objc
+alias swift settings set target.language swift
