@@ -11,6 +11,7 @@
 
 [branch]
 	autosetupmerge = true
+	sort           = -authordate
 
 [branch "master"]
 	merge  = refs/heads/master
