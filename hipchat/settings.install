@@ -1,9 +1,0 @@
-#!/bin/sh
-#
-# HipChat specific settings
-
-echo "- Setting up HipChat"
-
-# Swap ⇧⌘W and ⌘W behave more like iMessage.
-defaults write com.hipchat.hipchat NSUserKeyEquivalents -dict-add "Close Chat" "@\$w"
-defaults write com.hipchat.hipchat NSUserKeyEquivalents -dict-add "Close Window" "@w"
