@@ -6,7 +6,6 @@
 	co        = checkout --quiet
 	g         = !exec git
 	git       = !exec git
-	multipull = !find . -name .git -type d -depth 2 -exec git -C "$PWD/{}/.." pull --ff-only "\\;"
 	subup     = submodule update --recursive --init
 
 [branch]
