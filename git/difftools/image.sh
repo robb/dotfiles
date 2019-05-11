@@ -1,15 +1,7 @@
 #!/bin/sh
 
-if which identify > /dev/null ; then
-  format=$(cat <<FORMAT_STRING
-Format:     %m
-Size:       %b
-Width:      %w px
-Height:     %h px
-Colorspace: %[colorspace]
-Hash:       %#\n
-FORMAT_STRING)
-  identify -format "$format" $1
+if which sips > /dev/null ; then
+  sips -g all $1 | tail -n +2 | sort
 else
-  md5 < $1
+  md5 -r $1
 fi
