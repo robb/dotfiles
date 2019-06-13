@@ -28,3 +28,6 @@ xcuserdata
 
 # Xcode Playgrounds
 *.xctimeline
+
+# Swift Package Manager
+.swiftpm/xcode
