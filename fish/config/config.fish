@@ -6,6 +6,9 @@ set -x LANGUAGE "en_US.UTF-8"
 set -x LC_ALL "en_US.UTF-8"
 set -x LANG "en_US.UTF-8"
 
+# Homebrew
+set -x HOMEBREW_NO_ANALYTICS 1
+
 function fish_greeting
     clear
 end
