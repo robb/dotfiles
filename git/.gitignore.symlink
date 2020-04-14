@@ -31,3 +31,4 @@ xcuserdata
 
 # Swift Package Manager
 .swiftpm/xcode
+.build
