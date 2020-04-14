@@ -51,7 +51,7 @@
     "tslint.autoFixOnSave": true,
     "window.titleBarStyle": "native",
     "window.zoomLevel": 0,
-    "workbench.activityBar.visible": false,
+    "workbench.activityBar.visible": true,
     "workbench.colorCustomizations": {
         "terminal.ansiBlack": "#000000",
         "terminal.ansiBlue": "#5240C9",
@@ -72,8 +72,8 @@
         "terminal.background": "#171717",
         "terminal.foreground": "#FFFFFF"
     },
-    "workbench.colorTheme": "Visual Studio Dark",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.statusBar.feedback.visible": false,
-    "workbench.statusBar.visible": false
+    "workbench.statusBar.visible": true,
+    "workbench.colorTheme": "Monokai Dimmed"
 }
