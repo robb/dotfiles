@@ -77,6 +77,9 @@
 [include]
 	path = .dotfiles/secret/.gitconfig
 
+[init]
+	templateDir = ~/.dotfiles/git/template/
+
 [log]
 	abbrevCommit = true
 	decorate     = auto
