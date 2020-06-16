@@ -12,6 +12,10 @@
 	autosetupmerge = true
 	sort           = -authordate
 
+[branch "main"]
+	merge  = refs/heads/main
+	remote = origin
+
 [branch "master"]
 	merge  = refs/heads/master
 	remote = origin
