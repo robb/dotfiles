@@ -43,12 +43,12 @@ function fish_prompt
                 set behind (git rev-list --left-right $remote_ref...HEAD 2> /dev/null | grep '<' | wc -l | tr -d ' ')
 
                 if test $ahead -gt 0 -a $behind -gt 0
-                    set ahead_behind_state (printf ", %s↑%s%s, %s↓%s%s" (set_color normal | set_color -o) $ahead  (set_color normal) \
-                                                                        (set_color normal | set_color -o) $behind (set_color normal))
+                    set ahead_behind_state (printf ", %s􀄨%s%s%s, %s􀄩%s%s%s" (set_color normal) (set_color -o) $ahead  (set_color normal) \
+                                                                          (set_color normal) (set_color -o) $behind (set_color normal))
                 else if test $ahead -gt 0
-                    set ahead_behind_state (printf ", %s↑%s%s" (set_color normal | set_color -o) $ahead (set_color normal))
+                    set ahead_behind_state (printf ", %s􀄨%s%s%s" (set_color normal) (set_color -o) $ahead (set_color normal))
                 else if test $behind -gt 0
-                    set ahead_behind_state (printf ", %s↓%s%s" (set_color normal | set_color -o) $behind (set_color normal))
+                    set ahead_behind_state (printf ", %s􀄩%s%s%s" (set_color normal) (set_color -o) $behind (set_color normal))
                 end
 
                 set git_prompt "$branch_state""$ahead_behind_state"
@@ -69,21 +69,22 @@ function fish_prompt
             set -l untracked $status
 
             if test $staged = 1
-                set separator '●'
+                set separator '􀈸 '
             else if test $untracked = 1 -o $changed = 1
-                set separator '○'
+                set separator '􀈷 '
             else
-                set separator '–'
+                set separator '􀆊'
             end
         end
     else
         set git_prompt ''
-        set separator '–'
+        set separator '􀆊'
     end
 
-    printf '%s¶%s %s%s %s ' (set_color $exit_color) \
+    printf '%s􀒆%s%s%s %s%s' (set_color $exit_color) \
                             (set_color normal) \
                             $cwd \
                             $git_prompt \
+                            (set_color normal) \
                             $separator
 end
