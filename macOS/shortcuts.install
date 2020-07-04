@@ -3,4 +3,4 @@
 echo "- Setting up System-wide Shortcuts"
 
 # Map ⇧⌘R to rename the current document.
-defaults write -g NSUserKeyEquivalents -dict-add "Rename..." "@\$r"
+defaults write -g NSUserKeyEquivalents -dict-add "Rename\\U2026" "@\$r"
