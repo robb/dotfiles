@@ -26,6 +26,9 @@ defaults write NSGlobalDomain AppleAquaColorVariant -int 6
 # Use Graphite Highlight Color
 defaults write NSGlobalDomain AppleHighlightColor -string "0.780400 0.815700 0.858800"
 
+# Show file icon in title bar without delay
+defaults write -g NSToolbarTitleViewRolloverDelay -float 0
+
 ## Panels
 
 # Expand save panel by default
