@@ -81,8 +81,8 @@
         "terminal.background": "#171717",
         "terminal.foreground": "#FFFFFF"
     },
+    "workbench.colorTheme": "Monokai Dimmed",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.statusBar.feedback.visible": false,
-    "workbench.statusBar.visible": true,
-    "workbench.colorTheme": "Monokai Dimmed"
+    "workbench.statusBar.visible": true
 }
