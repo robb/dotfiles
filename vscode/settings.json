@@ -2,7 +2,7 @@
     "[markdown]": {
         "files.trimTrailingWhitespace": false
     },
-    "git.confirmSync": false,
+    "editor.bracketPairColorization.enabled": true,
     "editor.cursorStyle": "line-thin",
     "editor.fontFamily": "'SF Mono', 'SF Pro', Monaco, 'Courier New', monospace",
     "editor.fontLigatures": true,
