@@ -29,11 +29,16 @@
         "*.podspec": "ruby"
     },
     "files.exclude": {
+        "**/.build": true,
         "**/.DS_Store": true,
         "**/.git": true,
+        "**/.github": true,
         "**/.hg": true,
         "**/.svn": true,
+        "**/.swiftpm": true,
         "**/.swp": true,
+        "**/*.playground/timeline.xctimeline": true,
+        "**/*.xcworkspace": true,
         "**/CVS": true
     },
     "files.insertFinalNewline": true,
