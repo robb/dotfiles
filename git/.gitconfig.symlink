@@ -64,13 +64,6 @@
 	renames          = copies
 	wsErrorHighlight = all
 
-[diff "image"]
-	textconv = sh ~/.dotfiles/git/difftools/image.sh
-
-[filter "media"]
-	clean  = git-media-clean %f
-	smudge = git-media-smudge %f
-
 [grep]
 	extendRegexp = true
 	lineNumber   = true
