@@ -32,3 +32,5 @@ xcuserdata
 # Swift Package Manager
 .swiftpm/xcode
 .build
+
+contents.xcworkspacedata
