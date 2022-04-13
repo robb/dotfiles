@@ -64,6 +64,12 @@
 	renames          = copies
 	wsErrorHighlight = all
 
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+
+[difftool]
+	prompt = false
+
 [grep]
 	extendRegexp = true
 	lineNumber   = true
@@ -80,6 +86,16 @@
 [log]
 	abbrevCommit = true
 	decorate     = auto
+
+[merge]
+	tool = Kaleidoscope
+
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+
+[mergetool]
+	prompt = false
 
 [pull]
 	ff = only
