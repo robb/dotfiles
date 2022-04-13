@@ -30,3 +30,8 @@ end
 if type -q rvm
     rvm default
 end
+
+# npm
+if test -d ~/Developer/.npm-global
+    set PATH "$HOME/Developer/.npm-global/bin" $PATH
+end
