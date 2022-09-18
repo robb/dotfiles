@@ -23,6 +23,9 @@ defaults write com.apple.dt.Xcode DVTTextPageGuideLocation -int 80
 # Enable internal debug menu
 defaults write com.apple.dt.Xcode ShowDVTDebugMenu -bool true
 
+# Map ⌘D to select the next occurrence of the current selection
+defaults write com.apple.dt.Xcode NSUserKeyEquivalents -dict-add "Select Next Occurrence" "@d"
+
 # Map ⌃⌘L to show last change for the current line
 defaults write com.apple.dt.Xcode NSUserKeyEquivalents -dict-add "Show Last Change for Line" "@^l"
 
