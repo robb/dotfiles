@@ -1,16 +1,25 @@
 function prompt_separator
     begin
-        if not git diff-index --quiet --cached HEAD 2> /dev/null
+        git diff-index --quiet --cached HEAD 2> /dev/null
+        set -l staged $status
+
+        if test $staged = 1
             echo '􀈸'
             exit 0
         end
 
-        if not git diff --quiet 2> /dev/null
+        git diff-files --name-only | git diff --quiet 2> /dev/null
+        set -l changed $status
+
+        if test $changed = 1
             echo '􀈷'
             exit 0
         end
 
-        if git ls-files --exclude-standard --others | read -l
+        test -z (git ls-files --exclude-standard --others) 2> /dev/null
+        set -l untracked $status
+
+        if test $untracked = 1
             echo '􀈷'
         else
             echo '􀆊'
