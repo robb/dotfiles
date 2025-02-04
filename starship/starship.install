@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo "- Linking ~/.config/starship.toml"
+
+mkdir -p ~/.config
+rm ~/.config/starship.toml
+
+ln -sF ~/.dotfiles/starship/starship.toml ~/.config/starship.toml
