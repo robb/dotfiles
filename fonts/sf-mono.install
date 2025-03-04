@@ -2,4 +2,4 @@
 
 echo "- Installing SF Mono"
 
-cp -R /Applications/Utilities/Terminal.app/Contents/Resources/Fonts/. ~/Library/Fonts/
+cp -R /System/Applications/Utilities/Terminal.app/Contents/Resources/Fonts/. ~/Library/Fonts
