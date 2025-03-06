@@ -29,6 +29,11 @@ if test -d ~/.cargo/bin
     set PATH "$HOME/.cargo/bin" $PATH
 end
 
+# Sublime Text
+if test -d /Applications/Sublime\ Text.app/Contents/SharedSupport
+    set PATH "/Applications/Sublime Text.app/Contents/SharedSupport/bin" $PATH
+end
+
 # Initialize RVM
 if type -q rvm
     rvm default
