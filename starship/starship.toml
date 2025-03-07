@@ -11,10 +11,12 @@ success_symbol = "[􀒆 ](bold)"
 format = "[$path]($style)[$read_only]($read_only_style)"
 style = "bold"
 truncate_to_repo = false
+truncation_length = 2
 
 [git_branch]
 format = " at [$branch(:$remote_branch)]($style)"
 style = "bold"
+truncation_length = 20
 
 [git_status]
 ahead = "(􀄨 ${count})"
