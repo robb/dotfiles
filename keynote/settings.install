@@ -6,7 +6,3 @@ echo "- Setting up Keynote"
 
 # Disable smart quotes
 defaults write com.apple.iWork.Keynote TSWPAutomaticQuoteSubstitution 0
-
-# Map ⇧⌘E to toggle master slide editing mode
-defaults write com.apple.iWork.Keynote NSUserKeyEquivalents -dict-add "Edit Master Slides" "@\$e"
-defaults write com.apple.iWork.Keynote NSUserKeyEquivalents -dict-add "Exit Master Slides" "@\$e"
