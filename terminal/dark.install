@@ -1,9 +1,0 @@
-#!/bin/sh
-
-echo "- Installing Dark.terminal theme"
-
-dark="$(cat ~/.dotfiles/terminal/Dark.terminal)"
-defaults write com.apple.Terminal "Window Settings" -dict-add "Dark" "$dark"
-
-defaults write com.apple.Terminal "Default Window Settings" "Dark"
-defaults write com.apple.Terminal "Startup Window Settings" "Dark"
