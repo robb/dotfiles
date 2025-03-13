@@ -2,145 +2,9 @@
 #
 # macOS Specific settings
 
-echo "- Setting up macOS"
-
-## macOS Settings
-
-# Disable Resume system-wide
-defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
-
-# Enable automatic termination of inactive apps
-defaults write NSGlobalDomain NSDisableAutomaticTermination -bool false
-
-# Use AirDrop over every interface.
-defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
-
-## Appearance & Animations
-
-# Increase window resize speed for Cocoa applications
-defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
-
-# Use Graphite Appearance
-defaults write NSGlobalDomain AppleAquaColorVariant -int 6
-
-# Use Graphite Highlight Color
-defaults write NSGlobalDomain AppleHighlightColor -string "0.780400 0.815700 0.858800"
-
-# Show file icon in title bar without delay
-defaults write -g NSToolbarTitleViewRolloverDelay -float 0
-
-## Panels
-
-# Expand save panel by default
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
-
-# Expand print panel by default
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
-
-# Save to disk (not to iCloud) by default
-defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
-
-
-## Media Keys
-
-# Disable volume key feedback
-defaults write NSGlobalDomain com.apple.sound.beep.feedback -float 0
-
-
-## Keyboard
-
-# Disable press-and-hold in favor of key repeat
-defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
-
-# Set fast key repeat
-defaults write NSGlobalDomain InitialKeyRepeat -int 15
-defaults write NSGlobalDomain KeyRepeat -int 2
-
-# Disable auto-correct
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
-
-# Enable full keyboard access for all controls
-# (e.g. enable Tab in modal dialogs)
-defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
-
-
-## Mouse
-
-# Set mouse tracking speed to reasonably fast
-defaults write NSGlobalDomain com.apple.mouse.scaling -float 2
-
-# Tap to click
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking 1
-defaults write com.apple.AppleMultitouchTrackpad Clicking 1
-
-## Finder
-
-# Disable all animations
-defaults write com.apple.finder DisableAllAnimations -bool true
-
-# Use list view in all Finder windows by default
-# Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
-defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
-
-# Finder: allow text selection in Quick Look
-defaults write com.apple.finder QLEnableTextSelection -bool true
-
-# Disable the warning when changing a file extension
-defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
-
-# Display full POSIX path as Finder window title
-defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
-
-# Show all filename extensions
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
-
-# Show status bar
-defaults write com.apple.finder ShowStatusBar -bool true
-
-# Show path bar
-defaults write com.apple.finder ShowPathbar -bool true
-
-# Hide all desktop icons
-defaults write com.apple.finder CreateDesktop -bool false
-
-# Show the ~/Library folder
-chflags nohidden ~/Library
-
-
-## Menu Bar
-
-# Hide Siri
-defaults write com.apple.siri "StatusMenuVisible" 0
-defaults write com.apple.systemuiserver "NSStatusItem Visible Siri" 0
-
-# Enable favorite menu extras
-defaults write com.apple.systemuiserver "menuExtras" -array \
-        "/System/Library/CoreServices/Menu Extras/Clock.menu" \
-        "/System/Library/CoreServices/Menu Extras/Battery.menu" \
-        "/System/Library/CoreServices/Menu Extras/Volume.menu" \
-        "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
-        "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
-        "/Library/Application Support/AppleConnect/AppleConnectAgent.app/Contents/PlugIns/AppleConnectExtra.menu"
-
-# Use analog clock
-defaults write com.apple.menuextra.clock IsAnalog -bool true
-
-# Show all processess under energy consumption
-defaults write com.apple.menuextra.battery "ShowAllTopProcesses" -bool true
-
-# Don't show battery percentage
-defaults write com.apple.menuextra.battery "ShowPercent" -bool false
-
-# Hide Spotlight Icon
-defaults write com.apple.Spotlight "NSStatusItem Visible Item-0" 0
+echo "- Setting up Dock"
 
 ## Dock
-
-# Don’t animate opening applications from the Dock
-defaults write com.apple.dock launchanim -bool false
-
-# Minimal Dock
-defaults write com.apple.dock no-glass -bool true
 
 # Move Dock to the right
 defaults write com.apple.dock orientation -string "right"
@@ -166,35 +30,8 @@ defaults write com.apple.dock size-immutable -bool YES
 # Prevent icons from bouncing
 defaults write com.apple.dock no-bouncing -bool true
 
-# Disable the indicator lights for currently running apps
-defaults write com.apple.dock show-process-indicators -bool true
-
 # Remove all permanent apps from the dock
 defaults write com.apple.dock persistent-apps -array
 
-### Spaces
-
-# Don’t automatically rearrange Spaces based on most recent use
-defaults write com.apple.dock mru-spaces -bool false
-
-# Set edge-dragging delay to 1.0
-defaults write com.apple.dock workspaces-edge-delay -float 1.0
-
-
-### Mojave
-
-# Enable Dark Mode
-
-if [ $(sw_vers -productVersion) == 10.14 ]; then
-        echo "- Enabling Dark Mode"
-        osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to true'
-fi
-
-### Screen Shots
-
-# Move screen shots to ~/Screen Shots
-mkdir -p ~/Screen\ Shots
-defaults write com.apple.screencapture location ~/Screen\ Shots
-
-echo "- Restarting SystemUIServer"
-killall SystemUIServer
+echo "- Restarting Dock"
+killall Dock
