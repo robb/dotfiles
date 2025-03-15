@@ -34,3 +34,9 @@ defaults write com.apple.dt.Xcode NSUserKeyEquivalents -dict-add "Split Selectio
 
 # Ignore whitespace changes for blame
 defaults write com.apple.dt.Xcode DVTDiffSessionIgnoreWhitespaceKey -bool true
+
+# Show Code Folding Ribbon
+defaults write com.apple.dt.Xcode DVTTextShowFoldingSidebar -bool true
+
+# Show All File Extensions
+defaults write com.apple.dt.Xcode IDEFileExtensionDisplayMode -int 1
