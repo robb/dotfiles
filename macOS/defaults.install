@@ -33,5 +33,11 @@ defaults write com.apple.dock no-bouncing -bool true
 # Remove all permanent apps from the dock
 defaults write com.apple.dock persistent-apps -array
 
+# Disable hot corners
+defaults write com.apple.dock wvous-tl-corner -int 1
+defaults write com.apple.dock wvous-bl-corner -int 1
+defaults write com.apple.dock wvous-tr-corner -int 1
+defaults write com.apple.dock wvous-br-corner -int 1
+
 echo "- Restarting Dock"
 killall Dock
