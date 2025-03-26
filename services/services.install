@@ -1,0 +1,11 @@
+#!/bin/sh
+
+echo "- Setting up Services"
+
+# Sort Selection
+cp -R ~/.dotfiles/services/Sort\ Selection.workflow ~/Library/Services/
+defaults write -g NSUserKeyEquivalents -dict-add "Sort Selection" "@^s"
+
+# Open in Linear.app
+cp -R ~/.dotfiles/services/Open\ in\ Linear.workflow ~/Library/Services/
+defaults write -g NSUserKeyEquivalents -dict-add "Open in Linear" "~@^l"
