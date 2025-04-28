@@ -1,5 +1,6 @@
 [advice]
 	statusHints = false
+	addEmptyPathspec = false
 
 [alias]
 	cl        = clone --recursive
@@ -81,7 +82,7 @@
 	path = .dotfiles/secret/.gitconfig
 
 [init]
-	templateDir = ~/.dotfiles/git/template/
+	defaultBranch = main
 
 [log]
 	abbrevCommit = true
