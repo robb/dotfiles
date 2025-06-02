@@ -34,3 +34,6 @@ xcuserdata
 .build
 
 contents.xcworkspacedata
+
+# macOS folder icons
+Icon
