@@ -39,5 +39,8 @@ defaults write com.apple.dock wvous-bl-corner -int 1
 defaults write com.apple.dock wvous-tr-corner -int 1
 defaults write com.apple.dock wvous-br-corner -int 1
 
+# Don't switch spaces
+defaults write -g AppleSpacesSwitchOnActivate 1
+
 echo "- Restarting Dock"
 killall Dock
