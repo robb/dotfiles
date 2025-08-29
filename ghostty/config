@@ -1,22 +1,32 @@
+theme = catppuccin-macchiato
+
 adjust-cell-height = 10
 adjust-cell-width = 0%
 adjust-cursor-height = -2
-background-blur = 25
-background-opacity = 0.98
+background-blur = 40
+background-opacity = 0.85
 cursor-style = bar
 font-family = Berkeley Mono Variable
 font-family = SF Pro
 font-size = 14
 font-style = Retina
-font-style-italic = "Retina Oblique"
 font-style-bold = "Bold"
 font-style-bold-italic = "Bold Oblique"
+font-style-italic = "Retina Oblique"
 font-synthetic-style = ""
 font-variation-italic = "slnt=-4"
 macos-icon = blueprint
+macos-option-as-alt = false
 macos-titlebar-style = tabs
+quick-terminal-animation-duration = 0
+quick-terminal-position = center
+quick-terminal-screen = macos-menu-bar
+quick-terminal-size = 80%,80%
 shell-integration = fish
+window-colorspace = display-p3
 window-decoration = auto
 window-padding-x = 12
 window-padding-y = 8
 window-theme = system
+
+keybind = global:cmd+escape=toggle_quick_terminal
