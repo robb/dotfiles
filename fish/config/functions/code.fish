@@ -1,4 +1,4 @@
-function code -d "Open Visual Studio Code"
+function code -d "Open Visual Studio Code/VSCodium"
   set -l files
   set -l opts
   set -l projects
@@ -30,6 +30,8 @@ function code -d "Open Visual Studio Code"
     command code $argv
   else if test -d "/Applications/Visual Studio Code.app"
     "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code" $argv
+    else if test -d "/Applications/VSCodium.app"
+    "/Applications/VSCodium.app/Contents/Resources/app/bin/codium" $argv
   else
     echo 'No Visual Studio Code installation found' >&2
     echo 'Add `code` to your $PATH or set $CODE_PATH' >&2
