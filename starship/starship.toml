@@ -1,7 +1,6 @@
 add_newline = false
 format = """
 $character$directory$git_branch$git_status ${custom.separator}"""
-right_format = """${custom.swift}"""
 
 [character]
 error_symbol = "[􀇿 ](bold fg:#FFCC00)"
@@ -37,11 +36,3 @@ description = "A custom separator, indicating the style of the repo"
 format = "[($output  )]($style)"
 style = "bold"
 when = true
-
-[custom.swift]
-description = "Current directory contains a Swift Project"
-detect_extensions = ["swift", "xcodeproj"]
-format = " [$symbol]($style)"
-style = "fg:#bf5700"
-symbol = "􀫊 "
-when = "[ -n \"$(find . -maxdepth 1 -type d -name '*.xcodeproj' 2>/dev/null)\" ] || exit 1"
