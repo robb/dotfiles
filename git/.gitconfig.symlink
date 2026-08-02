@@ -8,6 +8,7 @@
 	g         = !exec git
 	git       = !exec git
 	subup     = submodule update --recursive --init
+	authors   = shortlog -n -s -e --
 
 [branch]
 	autosetupmerge = true
