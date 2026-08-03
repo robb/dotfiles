@@ -23,6 +23,12 @@ if test -x /opt/homebrew/bin/brew
     /opt/homebrew/bin/brew shellenv fish | source
 end
 
+# fish is installed outside the Homebrew prefix, so its vendor completions
+# are not on the default completion path.
+if test -d /opt/homebrew/share/fish/vendor_completions.d
+    set -a fish_complete_path /opt/homebrew/share/fish/vendor_completions.d
+end
+
 # PATH, highest precedence first. Directories that do not exist are skipped.
 set -x BUN_INSTALL "$HOME/.bun"
 
