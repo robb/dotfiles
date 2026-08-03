@@ -33,8 +33,3 @@ fish_add_path --global --move --path \
     "$HOME/Developer/.npm-global/bin" \
     "/Applications/Sublime Text.app/Contents/SharedSupport/bin" \
     /usr/local/sbin
-
-# Initialize RVM
-if type -q rvm
-    rvm default
-end
