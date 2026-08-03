@@ -9,9 +9,6 @@ set -x LANG "en_US.UTF-8"
 # Starship
 starship init fish | source
 
-# Homebrew
-set -x HOMEBREW_NO_ANALYTICS 1
-
 function fish_greeting
     clear
 end
@@ -20,31 +17,24 @@ function fish_title
 end
 
 # Homebrew
-if test -d /usr/local/sbin
-    set PATH "/usr/local/sbin" $PATH
+set -x HOMEBREW_NO_ANALYTICS 1
+
+if test -x /opt/homebrew/bin/brew
+    /opt/homebrew/bin/brew shellenv fish | source
 end
 
-# Rust
-if test -d ~/.cargo/bin
-    set PATH "$HOME/.cargo/bin" $PATH
-end
+# PATH, highest precedence first. Directories that do not exist are skipped.
+set -x BUN_INSTALL "$HOME/.bun"
 
-# Sublime Text
-if test -d /Applications/Sublime\ Text.app/Contents/SharedSupport
-    set PATH "/Applications/Sublime Text.app/Contents/SharedSupport/bin" $PATH
-end
+fish_add_path --global --move --path \
+    "$HOME/.local/bin" \
+    "$BUN_INSTALL/bin" \
+    "$HOME/.cargo/bin" \
+    "$HOME/Developer/.npm-global/bin" \
+    "/Applications/Sublime Text.app/Contents/SharedSupport/bin" \
+    /usr/local/sbin
 
 # Initialize RVM
 if type -q rvm
     rvm default
 end
-
-# npm
-if test -d ~/Developer/.npm-global
-    set PATH "$HOME/Developer/.npm-global/bin" $PATH
-end
-
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
-export PATH="$HOME/.local/bin:$PATH"
