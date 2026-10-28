@@ -32,4 +32,4 @@ window-theme = system
 custom-shader = ~/.dotfiles/ghostty/shaders/starfield.glsl
 custom-shader-animation = true
 
-keybind = global:f13=toggle_visibility
+keybind = global:cmd+\=toggle_visibility
