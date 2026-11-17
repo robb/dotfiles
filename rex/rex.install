@@ -3,3 +3,15 @@
 echo "- Linking ~/.config/rex/config"
 
 ln -sF ~/.dotfiles/rex ~/.config/rex
+
+echo "- Setting Rex terminal font preferences"
+
+defaults write com.superlogical.rex Workspace.terminalFontName -string "Berkeley Mono Variable"
+defaults write com.superlogical.rex Workspace.terminalFontStyle -string Medium
+defaults write com.superlogical.rex Workspace.terminalFontPointSize -float 12
+defaults write com.superlogical.rex Workspace.terminalCellHeightPercent -float 25
+defaults write com.superlogical.rex Workspace.terminalCharacterSpacing -string 1
+defaults write com.superlogical.rex Workspace.terminalAllowsLigatures -bool true
+defaults write com.superlogical.rex Workspace.terminalFontSmoothing -bool false
+defaults write com.superlogical.rex Workspace.terminalImproveTextContrast -bool true
+defaults write com.superlogical.rex Workspace.terminalUsesDisplayP3 -bool true
