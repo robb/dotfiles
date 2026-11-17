@@ -1,7 +1,0 @@
-#!/bin/sh
-
-echo "- Linking ~/.config/ghostty/config"
-
-mkdir -p ~/.config/ghostty
-
-ln -sF ~/.dotfiles/ghostty/config ~/.config/ghostty/config
