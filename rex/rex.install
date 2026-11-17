@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "- Linking ~/.config/rex/config"
+
+ln -sF ~/.dotfiles/rex ~/.config/rex
