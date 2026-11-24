@@ -1,0 +1,46 @@
+;; Seatbelt profile for pi. Used by fish/config/functions/pi.fish.
+;;
+;; Parameters:
+;;   HOME     the user's home directory
+;;   PROJECT  the folder pi may read and write (the git root or the cwd)
+
+(version 1)
+(allow default)
+
+;; Reads: block $HOME except pi's state, git and npm config, and the project.
+(deny file-read* (subpath (param "HOME")))
+(allow file-read*
+  (literal (param "HOME"))
+  (subpath (string-append (param "HOME") "/.pi"))
+  (subpath (string-append (param "HOME") "/.npm"))
+  (literal (string-append (param "HOME") "/.npmrc"))
+  (literal (string-append (param "HOME") "/.gitconfig"))
+  (literal (string-append (param "HOME") "/.gitignore"))
+  (literal (string-append (param "HOME") "/.gitattributes"))
+  (subpath (string-append (param "HOME") "/.config/git"))
+  (subpath (string-append (param "HOME") "/.dotfiles/git"))
+  (subpath (param "PROJECT"))
+
+  ;; pi's extensions link into here from ~/.pi/agent/extensions.
+  (subpath (string-append (param "HOME") "/.dotfiles/pi"))
+
+  ;; Rex: the skill, the rex CLI, and its server socket.
+  (subpath (string-append (param "HOME") "/.agents/skills"))
+  (subpath (string-append (param "HOME") "/.config/rex"))
+  (subpath (string-append (param "HOME") "/Library/Application Support/rex"))
+  (subpath (string-append (param "HOME") "/Library/Application Support/com.superlogical.rex"))
+
+  ;; Ollama, which the ollama extension may start: its models and keys.
+  (subpath (string-append (param "HOME") "/.ollama")))
+
+;; Writes: only the project, pi's state, npm's cache, Ollama, and temp folders.
+(deny file-write*)
+(allow file-write*
+  (subpath (param "PROJECT"))
+  (subpath (string-append (param "HOME") "/.ollama"))
+  (subpath (string-append (param "HOME") "/.pi"))
+  (subpath (string-append (param "HOME") "/.npm"))
+  (subpath "/private/tmp")
+  (subpath "/private/var/folders")
+  (subpath "/dev"))
+

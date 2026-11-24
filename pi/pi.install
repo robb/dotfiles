@@ -1,0 +1,14 @@
+#!/bin/sh
+
+echo "- Linking pi extensions into ~/.pi/agent/extensions"
+
+mkdir -p ~/.pi/agent/extensions
+
+for extension in ~/.dotfiles/pi/extensions/*.ts; do
+  ln -sf "$extension" ~/.pi/agent/extensions/
+done
+
+if command -v rex >/dev/null 2>&1; then
+  echo "- Installing the Rex skill for pi"
+  rex skill setup --agent pi
+fi
